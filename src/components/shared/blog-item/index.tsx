@@ -36,14 +36,14 @@ const BlogItem: React.FC<BlogItemProps> = (props) => {
                     src={imgUrl}
                     height="300"
                     width="300"
-                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[15rem] object-cover"
+                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[12rem] object-cover"
                     alt={title}
                     priority={true}
                 />
             </div>
-            <div className="flex flex-col p-5 h-40 space-y-2 text-start justify-between">
-                <div className="flex space-y-2">
-                    <h3 className="text-xl font-medium text-customBlue-900 truncate-text">{title}</h3>
+            <div className="flex flex-col p-5 space-y-2 text-start justify-between">
+                <div className="flex space-y-2 h-[70px]">
+                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text pb-1">{title}</h3>
                     {/* <p className="text-md text-gray-500 truncate-text description-font">{date}</p> */}
                 </div>
                 <div className="flex justify-between items-center">
@@ -55,8 +55,8 @@ const BlogItem: React.FC<BlogItemProps> = (props) => {
                     </Link>
                     <div className="flex items-center justify-end cursor-pointer group select-none" onClick={(e) => { e.stopPropagation(); router.push(`${lng}/profile/${userDto?.id}`) }}>
                         <div className="flex flex-col items-end text-gray-400 font-regmed mr-3 transition-all duration-200 ease-in-out">
-                            <span className='text-sm'>{t('writtenBy')}</span>
-                            <span className='ml-2 text-xl text-gray-600 font-medium group-hover:text-primary'> {userDto?.fullName?.split(' ')[0]}</span>
+                            <span className='text-xs'>{t('writtenBy')}</span>
+                            <span className='ml-2 text-md text-gray-600 font-medium group-hover:text-primary'> {userDto?.fullName?.split(' ')[0]}</span>
                         </div>
                         <div className="relative w-[45px] h-[45px] min-w-[45px] min-h-[45px] rounded-full overflow-hidden">
                             <Image

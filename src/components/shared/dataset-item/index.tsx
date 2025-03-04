@@ -39,15 +39,17 @@ const DatasetItem: React.FC<DatasetProps> = (props) => {
                     src={imageUrl}
                     height="300"
                     width="300"
-                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[15rem] object-cover"
+                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[10rem] object-cover"
                     alt={title}
                     priority={true}
                 />
             </div>
-            <div className="flex flex-col p-5 space-y-2 justify-between items-between h-[200px]">
-                <div className="h-auto">
-                    <h3 className="text-xl font-medium text-customBlue-900 truncate-text mb-2">{title}</h3>
-                    <p className="text-md text-gray-500 truncate-text description-font">{description}</p>
+            <div className="flex flex-col p-5 space-y-2 justify-between items-between">
+                <div className="h-[90px]">
+                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text pb-1">{title}</h3>
+                    <p className="text-gray-500 truncate-text description-font">
+                        <div dangerouslySetInnerHTML={{ __html: description }}></div>
+                    </p>
                 </div>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.stopPropagation(); router.push(`/${lng}/profile/${userDto?.id}`) }}>

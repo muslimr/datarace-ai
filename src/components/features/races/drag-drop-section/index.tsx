@@ -146,7 +146,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ competitionId, onClose }) =
     const handleDownload = async () => {
         try {
             const token = Cookies.get('dtr-token');
-            const response = await fetch(BASE_URL + `/files/download/result/${resultData?.id}`, {
+            const response = await fetch(BASE_URL + `/files/download/result/${resultData?.id || competitionInfo?.resultFileId}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -206,7 +206,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ competitionId, onClose }) =
                         </div>
                         <div className="flex space-x-3 items-center justify-center">
                             {((uploadProgress == 100) || resultData?.id) && <CheckIcon className="w-10 h-10" />}
-                            {resultData?.id && <DownloadIcon onClick={handleDownload} className="w-6 h-6 cursor-pointer fill-gray-800 hover:fill-primaryLight" />}
+                            {competitionInfo?.resultFileName && <DownloadIcon onClick={handleDownload} className="w-6 h-6 cursor-pointer fill-gray-800 hover:fill-primaryLight" />}
                             {competitionInfo?.resultFileId && <TrashIcon onClick={handleFileDelete} className="w-6 h-6 cursor-pointer hover:stroke-red" />}
                         </div>
                     </div>

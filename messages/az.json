@@ -97,7 +97,7 @@
   "confirmPassword": "Şifrəni təsdiqləyin",
   "registerWithEmail": "Mail ilə qeydiyyatdan keçin",
   "enterYourEmailPasswordForSignUp": "Qeydiyyatdan keçmək üçün mail və şifrəni daxil edin",
-  "atLeast3Characters": "Şifrə ən azı 3 simvoldan ibarət olmalıdır",
+  "atLeast8Characters": "Şifrə ən azı 8 simvoldan ibarət olmalıdır",
   "passwordConfirmationIsRequired": "Şifr təsdiqi tələb olunur",
   "passwordMustMatch": "Şifrələr eyni olmalıdır",
   "attendedRaces": "Qatıldığı yarışlar",

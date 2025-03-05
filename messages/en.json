@@ -97,7 +97,7 @@
   "confirmPassword": "Confirm Password",
   "registerWithEmail": "Register with email",
   "enterYourEmailPasswordForSignUp": "Enter your email and password to sign up",
-  "atLeast3Characters": "Password must be at least 3 characters",
+  "atLeast8Characters": "Password must be at least 8 characters",
   "passwordConfirmationIsRequired": "Password confirmation is required",
   "passwordMustMatch": "Passwords must match",
   "attendedRaces": "Attended Races",

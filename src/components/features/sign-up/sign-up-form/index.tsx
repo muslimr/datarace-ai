@@ -48,7 +48,7 @@ export const SignUpForm: React.FC = () => {
             .required(t('emailIsRequired')),
         password: Yup.string()
             .required(t('passwordIsRequired'))
-            .min(3, t('atLeast3Characters')),
+            .min(8, t('atLeast8Characters')),
         confirmation: Yup.string()
             .required(t('passwordConfirmationIsRequired'))
             .oneOf([Yup.ref('password')], t('passwordMustMatch')),

@@ -73,14 +73,14 @@ const RaceItem: React.FC<RaceProps> = (props) => {
                     src={imageUrl}
                     height="300"
                     width="300"
-                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[10rem] object-cover"
+                    className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 h-[14rem] object-cover"
                     alt={name}
                     priority={true}
                 />
             </div>
             <div className="flex flex-col p-5 space-y-3 text-start items-between">
                 <div className="h-[70px]">
-                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text pb-1">{name}</h3>
+                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text pb-1 group-hover:text-primary">{name}</h3>
                     <p className="text-gray-500 truncate-text description-font">
                         <div dangerouslySetInnerHTML={{ __html: text }}></div>
                     </p>

@@ -14,45 +14,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 
-const TEST_BLOGS = [
-    {
-        id: 1,
-        image: '/png/pic1.png',
-        title: 'Test Blog 1',
-        date: '06.11.2024',
-    },
-    {
-        id: 2,
-        image: '/png/pic2.png',
-        title: 'Test Blog 2',
-        date: '06.11.2024',
-    },
-    {
-        id: 3,
-        image: null,
-        title: 'Test Blog 3',
-        date: '06.11.2024',
-    },
-    {
-        id: 4,
-        image: '/png/pic4.png',
-        title: 'Test Blog 4',
-        date: '06.11.2024',
-    },
-    {
-        id: 5,
-        image: '/png/pic5.png',
-        title: 'Test Blog 5',
-        date: '06.11.2024',
-    },
-    {
-        id: 6,
-        image: '/png/pic6.png',
-        title: 'Test Blog 6',
-        date: '06.11.2024',
-    },
-]
-
 export const BlogSection: React.FC = () => {
     const lng = useLocale();
     const t = useTranslations();

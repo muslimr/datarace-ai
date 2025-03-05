@@ -60,7 +60,7 @@ export const DatasetsSection: React.FC = () => {
                     <p className="text-md text-gray-700">{t('competitionDescription')}</p>
                 </div>
             </div>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
                 {datasetsData?.userDatasets?.map((item, i) => (
                     <DatasetItem
                         key={i}

@@ -11,7 +11,7 @@ const CompetitionsSkeleton: React.FC = () => {
                     <Skeleton width="50%" height="16px" className="rounded-md" />
                 </div>
             </div>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-5">
                 {Array.from({ length: 6 }).map((_, i) => <RaceItemSkeleton key={i} />)}
             </div>
             <div className="flex justify-center mt-5">

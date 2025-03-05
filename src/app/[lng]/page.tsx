@@ -139,9 +139,9 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
                     <DatasetsSection />
                 </section>
 
-                <section className="container mx-auto md:px-7">
+                {/* <section className="container mx-auto md:px-7">
                     <BlogSection />
-                </section>
+                </section> */}
             </main>
         </div>
     );

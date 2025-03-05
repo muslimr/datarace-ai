@@ -258,5 +258,6 @@
   "solutionSavedSuccessfully": "Fayl uğurla yadda saxlanıldı!",
   "titleIsRequired": "Başlıq tələb olunur",
   "contentIsRequired": "Məzmun tələb olunur",
-  "uploadImage": "Şəkil Yüklə"
+  "uploadImage": "Şəkil Yüklə",
+  "challengeHasEnded": "Bu yarış başa çatıb"
 }

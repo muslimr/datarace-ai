@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
         { route: '/races', label: t('races') },
         { route: '/datasets', label: t('datasets') },
         { route: '/faq', label: t('faq') },
-        { route: '/blog', label: t('blog') },
+        // { route: '/blog', label: t('blog') },
         { route: '/contact', label: t('contact') },
     ];
 

@@ -4,6 +4,7 @@ import React from 'react';
 import { Dropdown } from '@components/shared/dropdown';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
+import { ArrowDownIcon, DownloadIcon } from '@assets/icons';
 
 
 const LANGS: { code: string; name: string }[] = [
@@ -44,13 +45,12 @@ const LanguageSwitcher = () => {
 
     return (
         <Dropdown content={DropdownContent}>
-            <div className="group p-[3px] rounded-full bg-gradient-to-r from-purple to-primary hover:to-purpleLight transition-all">
-                <button
-                    className={'font-medium border border-[3px] border-primaryLight rounded-full min-w-[40px] min-h-[40px] max-h-[40px] max-w-[40px] flex items-center justify-center hover:bg-primaryLight hover:text-white'}
-                >
-                    {lngToShow.toUpperCase()}
-                </button>
-            </div>
+            <button
+                className={'font-medium rounded-lg min-w-[60px] min-h-[37px] max-h-[37px] max-w-[80px] flex items-center justify-center text-primary bg-gray-100 hover:text-primaryLight'}
+            >
+                {lngToShow.toUpperCase()}
+                <ArrowDownIcon className="w-3 ml-2" />
+            </button>
         </Dropdown>
     );
 };

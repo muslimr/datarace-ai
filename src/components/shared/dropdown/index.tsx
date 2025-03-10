@@ -36,7 +36,7 @@ export const Dropdown: React.FC<IDropdownProps> = ({ content, children }) => {
                 {children} {/* Renders children element */}
             </div>
             {isOpen && (
-                <div onClick={toggleDropdown} className={`origin-top-right absolute right-0 mt-2 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-2 transition-all duration-500 transform ${isOpen ? 'scale-100 opacity-100' : 'scale-10 opacity-0'}`}>
+                <div onClick={toggleDropdown} className={`origin-top-right absolute left-0 md:right-0 md:left-auto mt-2 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-2 transition-all duration-500 transform ${isOpen ? 'scale-100 opacity-100' : 'scale-10 opacity-0'}`}>
                     {content}
                 </div>
             )}

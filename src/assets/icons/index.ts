@@ -51,6 +51,7 @@ import TrashIcon from './trash.svg';
 import LogoFullWhite from './logo_fullwhite.svg';
 import CopyIcon from './copy.svg';
 import ErrorIllustration from './404.svg';
+import ArrowDownIcon from './arrow-down.svg';
 
 
 
@@ -71,6 +72,7 @@ export {
     ErrorIllustration,
 
     // icons
+    ArrowDownIcon,
     CopyIcon,
     TrashIcon,
     DocUpload,

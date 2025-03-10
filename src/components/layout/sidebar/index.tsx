@@ -35,7 +35,7 @@ export const Sidebar: React.FC<ISidebarProps> = ({ navLinks, visible, setSidebar
                     onClick={(e) => e.stopPropagation()} // Prevent event propagation
                 >
                     <nav>
-                        <div className='relative z-40 flex justify-end px-5 py-2 border-b border-[#dedede]'>
+                        <div className='relative z-40 flex px-5 py-2 border-b border-[#dedede]'>
                             <LanguageSwitcher />
                         </div>
                         <ul className="flex flex-col gap-5 p-5">

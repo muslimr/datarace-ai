@@ -58,7 +58,9 @@ export const CompetitionsSection: React.FC = () => {
             <div>
                 <h2 className="text-[32px] md:text-[2.3rem]">{t('competitions')}</h2>
                 <p className="text-md text-gray-700">{t('competitionDescription')}</p>
-                <NoData description={t('noRacesDescription')} />
+                <div className="flex flex-col items-center justify-center p-6 text-center min-h-[50vh]">
+                    <p className="text-md text-gray-700 font-light md:max-w-[50%]">{t('noRacesDescription')}</p>
+                </div>
             </div>
         )
     }

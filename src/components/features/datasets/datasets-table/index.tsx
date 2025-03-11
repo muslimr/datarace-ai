@@ -3,15 +3,13 @@
 import React, { useState } from 'react';
 import { useLazyGetAllDatasetsQuery } from '@api/datasets-api';
 import { RootState } from '@store/store';
-import { useLocale, useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 import CompetitionsSkeleton from '@components/shared/skeletons/competitions-skeleton';
 import DatasetItem from '@components/shared/dataset-item';
 import { AuthModal, NoData, TablePagination } from '@components/shared';
 import { useDispatch } from 'react-redux';
 import { setDatasetCount } from '@slices/dataset-slice';
-import { useRouter } from 'next/navigation';
-
+import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 
 interface ICompetitionsTable {
@@ -20,11 +18,12 @@ interface ICompetitionsTable {
 }
 
 export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
-    const t = useTranslations();
-    const lng = useLocale();
-    const router = useRouter();
+
+    const { page } = useParams();
     const dispatch = useDispatch();
-    const { isAuthenticated } = useSelector((state: RootState) => state.user);
+    const pathname = usePathname();
+    const router = useRouter();
+
     const { loading: datasetsLoading, datasetsCount } = useSelector((state: RootState) => state.datasets);
 
     const [showAuthModal, setShowAuthModal] = React.useState<boolean>(false);
@@ -39,6 +38,7 @@ export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
     const onPageChange = (page: number) => {
         if (page >= 0 && page < totalPages) {
             setCurrentPage(page);
+            router.push(`${pathname}?p=${page}`)
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };

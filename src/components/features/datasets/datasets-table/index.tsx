@@ -9,7 +9,7 @@ import DatasetItem from '@components/shared/dataset-item';
 import { AuthModal, NoData, TablePagination } from '@components/shared';
 import { useDispatch } from 'react-redux';
 import { setDatasetCount } from '@slices/dataset-slice';
-import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 
 interface ICompetitionsTable {
@@ -19,10 +19,12 @@ interface ICompetitionsTable {
 
 export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
 
-    const { page } = useParams();
+    const searchParams = useSearchParams();
     const dispatch = useDispatch();
     const pathname = usePathname();
     const router = useRouter();
+
+    let activePage = searchParams.get("p");
 
     const { loading: datasetsLoading, datasetsCount } = useSelector((state: RootState) => state.datasets);
 
@@ -56,6 +58,11 @@ export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
             }
         });
     }, [currentPage, triggerGetDatasets]);
+
+
+    React.useEffect(() => {
+        setCurrentPage(Number(activePage))
+    }, [])
 
 
     if (datasetsLoading || isLoading) {

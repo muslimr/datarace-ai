@@ -37,9 +37,9 @@ const TermsModalContent: React.FC<ITermsModalContent> = (props) => {
     const t = useTranslations();
 
     return (
-        <div className="flex flex-col items-center space-y-5 text-center max-w-[800px] max-h-[800px] pt-5 pb-[100px] px-10 overflow-auto">
-            <h2 className="text-2xl mx-3 font-medium">{t('privacyTitle').toUpperCase()}</h2>
-            <div className="w-full flex-column items-start text-start space-y-2 font-thin">
+        <div className="flex flex-col items-center space-y-5 text-center max-w-[600px] max-h-[800px] pt-5 pb-[100px] px-10 overflow-auto">
+            <h2 className="w-full text-xl rounded-lg mx-3 py-3 top-0 font-medium absolute bg-white/20 backdrop-blur-xl">{t('termsTitle').toUpperCase()}</h2>
+            <div className="w-full flex-column text-sm items-start text-start space-y-2 font-thin pt-10">
                 <p className="font-medium -ml-4">
                     <strong>1. </strong>
                     {t('pr1')}
@@ -55,26 +55,6 @@ const TermsModalContent: React.FC<ITermsModalContent> = (props) => {
                 <p>
                     <strong className="font-medium">1.3. </strong>
                     {t('pr13')}
-                </p>
-                <p>
-                    <strong className="font-medium">1.4. </strong>
-                    {t('pr14')}
-                </p>
-                <p>
-                    <strong className="font-medium">1.5. </strong>
-                    {t('pr15')}
-                </p>
-                <p>
-                    <strong className="font-medium">1.6. </strong>
-                    {t('pr16')}
-                </p>
-                <p>
-                    <strong className="font-medium">1.7. </strong>
-                    {t('pr17')}
-                </p>
-                <p>
-                    <strong className="font-medium">1.8. </strong>
-                    {t('pr18')}
                 </p>
                 <p className="font-medium -ml-4">
                     <strong className="font-medium">2. </strong>
@@ -92,6 +72,10 @@ const TermsModalContent: React.FC<ITermsModalContent> = (props) => {
                     <strong className="font-medium">2.3. </strong>
                     {t('pr23')}
                 </p>
+                <p>
+                    <strong className="font-medium">2.4. </strong>
+                    {t('pr24')}
+                </p>
                 <p className="font-medium -ml-4">
                     <strong className="font-medium">3. </strong>
                     {t('pr3')}
@@ -103,6 +87,74 @@ const TermsModalContent: React.FC<ITermsModalContent> = (props) => {
                 <p>
                     <strong className="font-medium">3.2. </strong>
                     {t('pr32')}
+                </p>
+                <p>
+                    <strong className="font-medium">3.3. </strong>
+                    {t('pr33')}
+                </p>
+                <p>
+                    <strong className="font-medium">3.4. </strong>
+                    {t('pr34')}
+                </p>
+                <p className="font-medium -ml-4">
+                    <strong className="font-medium">4. </strong>
+                    {t('pr4')}
+                </p>
+                <p>
+                    <strong className="font-medium">4.1. </strong>
+                    {t('pr41')}
+                </p>
+                <p>
+                    <strong className="font-medium">4.2. </strong>
+                    {t('pr42')}
+                </p>
+                <p className="font-medium -ml-4">
+                    <strong className="font-medium">5. </strong>
+                    {t('pr5')}
+                </p>
+                <p>
+                    <strong className="font-medium">5.1. </strong>
+                    {t('pr51')}
+                </p>
+                <p>
+                    <strong className="font-medium">5.2. </strong>
+                    {t('pr52')}
+                </p>
+                <p>
+                    <strong className="font-medium">5.3. </strong>
+                    {t('pr53')}
+                </p>
+                <p className="font-medium -ml-4">
+                    <strong className="font-medium">6. </strong>
+                    {t('pr6')}
+                </p>
+                <p>
+                    <strong className="font-medium">6.1. </strong>
+                    {t('pr61')}
+                </p>
+                <p>
+                    <strong className="font-medium">6.2. </strong>
+                    {t('pr62')}
+                </p>
+                <p className="font-medium -ml-4">
+                    <strong className="font-medium">7. </strong>
+                    {t('pr7')}
+                </p>
+                <p>
+                    <strong className="font-medium">7.1. </strong>
+                    {t('pr71')}
+                </p>
+                <p>
+                    <strong className="font-medium">7.2. </strong>
+                    {t('pr72')}
+                </p>
+                <p className="font-medium -ml-4">
+                    <strong className="font-medium">8. </strong>
+                    {t('pr8')}
+                </p>
+                <p>
+                    <strong className="font-medium">8.1. </strong>
+                    {t('pr81')}
                 </p>
             </div>
             {

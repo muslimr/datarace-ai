@@ -4,7 +4,8 @@ import React from 'react';
 import { Dropdown } from '@components/shared/dropdown';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
-import { ArrowDownIcon, DownloadIcon } from '@assets/icons';
+import { ArrowDownIcon } from '@assets/icons';
+import Cookies from 'js-cookie';
 
 
 const LANGS: { code: string; name: string }[] = [
@@ -23,6 +24,8 @@ const LanguageSwitcher = () => {
     const changeLanguage = (code: string) => {
         if (code === lng) return;
         setLngToShow(code);
+        // Store language in cookies
+        Cookies.set('language', code, { expires: 365 });
         const newPath = pathname.replace(`/${lng}`, `/${code}`);
         router.push(newPath);
     };

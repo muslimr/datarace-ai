@@ -2,6 +2,7 @@ import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { routing } from './i18n/routing';
 
+
 // Create middleware
 const intlMiddleware = createMiddleware(routing);
 
@@ -10,7 +11,8 @@ export default function middleware(req: NextRequest) {
 
     // Define locales and the default locale
     const locales = ['az', 'en'];
-    const defaultLocale = 'en';
+    const cookies = req.cookies;
+    const defaultLocale = cookies.get('language')?.value || 'az';
 
     // Regular expression to prevent duplicate locales
     const localePattern = new RegExp(`^/(az|en)(/\\1)+`);

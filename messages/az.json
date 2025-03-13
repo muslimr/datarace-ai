@@ -1,5 +1,5 @@
 {
-  "signIn": "Daxil Ol",
+  "signIn": "Daxil ol",
   "signUp": "Qeydiyyat",
   "title": "Süni intellekt üzrə yarışa qoşulun",
   "description": "DataRace, məlumat alimlərini və süni intellekt həvəskarlarını məlumat əsaslı çağırışlarda yarışmaq üçün bir araya gətirən yenilikçi bir platformadır.",
@@ -147,8 +147,8 @@
   "createBlog": "Bloq Yarat",
   "allBlogs": "Bütün Bloqlar",
   "myBlogs": "Mənim Bloqlarım",
-  "authModalTitle": "Doğrulama tələb olunur",
-  "authModalDescription": "Bu əməliyyatı yerinə yetirmək üçün doğrulama tələb olunur. \nDavam etmək üçün zəhmət olmasa daxil olun",
+  "authModalTitle": "Giriş tələb olunur",
+  "authModalDescription": "Bu yarışa qoşulmaq üçün hesabınıza daxil olun. Davam etmək üçün giriş edin və ya yeni hesab yaradın.",
   "dontHaveAccount": "Hələ hesabınız yoxdursa",
   "technology": "Texnologiya",
   "oilIndustry": "Neft və İndustriya",

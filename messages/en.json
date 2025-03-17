@@ -272,6 +272,7 @@
   "solutionSavedSuccessfully": "Solution has been saved successfully!",
   "titleIsRequired": "Title is required",
   "contentIsRequired": "Content is required",
+  "imageIsRequired": "Image is required",
   "uploadImage": "Upload Image",
   "challengeHasEnded": "This challenge has ended"
 }

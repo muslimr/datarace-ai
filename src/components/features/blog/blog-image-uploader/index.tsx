@@ -44,6 +44,7 @@ const BlogImageUploader: React.FC<ImageUploaderProps> = ({ blogId, image, setIma
     const onDeleteImage = () => {
         setInitialImage('');
         setImageId(null);
+        setUploadedImage(null);
     }
 
     React.useEffect(() => {

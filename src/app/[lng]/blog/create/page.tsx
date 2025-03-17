@@ -46,6 +46,10 @@ const BlogCreate: React.FC = () => {
 
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+        if (!imageId) {
+            toast.error(t('imageIsRequired'));
+            return;
+        }
         if (!data.title?.trim()) {
             toast.error(t('titleIsRequired'));
             return;

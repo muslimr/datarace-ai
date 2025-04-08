@@ -59,6 +59,7 @@ export interface IScoreboardResponse {
 
 export interface ICompetitionInfoRequest {
     id: string | number,
+    lang: string,
 }
 
 export interface ICompetition {

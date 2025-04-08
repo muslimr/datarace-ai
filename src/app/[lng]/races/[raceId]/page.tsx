@@ -18,7 +18,7 @@ const RaceDetails: React.FC = () => {
     const params = useParams();
     const { raceId } = params;
     const competitionId = Array.isArray(raceId) ? raceId[0] : raceId;
-    const { data: competitionInfo, error, isLoading, refetch } = useGetCompetitionInfoQuery({ id: competitionId as string }, { skip: !competitionId });
+    const { data: competitionInfo, error, isLoading, refetch } = useGetCompetitionInfoQuery({ id: competitionId as string, lang: lng }, { skip: !competitionId });
 
 
     const TABS: { title: string, value: string, content: ReactNode }[] = [

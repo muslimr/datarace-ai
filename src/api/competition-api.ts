@@ -31,9 +31,10 @@ export const competitionApi = createApi({
             }),
         }),
         getCompetitionInfo: builder.query<ICompetition, ICompetitionInfoRequest>({
-            query: ({ id }) => ({
+            query: ({ id, lang }) => ({
                 url: `/competitions/${id}`,
                 method: 'GET',
+                headers: { "Accept-language": lang || "en" }
             }),
             providesTags: ['Competition'],
         }),

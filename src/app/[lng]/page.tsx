@@ -97,7 +97,7 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
         <div className="min-h-screen flex flex-col">
             <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
             <main id="main-content" className="flex-grow bg-gray-50 px-5 py-20 md:px-0 md:pb-40">
-                <section className="flex flex-col container mx-auto w-full items-center text-center md:flex-row md:px-7 md:justify-between">
+                {/* <section className="flex flex-col container mx-auto w-full items-center text-center md:flex-row md:px-7 md:justify-between">
                     <div className="flex items-center absolute animate-left-svg left-0 top-10 z-0">
                         <Shadow />
                     </div>
@@ -122,7 +122,7 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
                     <div className="hidden md:flex items-center justify-end animate-right-svg">
                         <Banner />
                     </div>
-                </section>
+                </section> */}
 
                 <section className="w-full overflow-x-auto py-[6rem] hide-scrollbar md:px-7">
                     <CategoriesSection />

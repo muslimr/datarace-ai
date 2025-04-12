@@ -54,6 +54,9 @@ import ErrorIllustration from './404.svg';
 import ArrowDownIcon from './arrow-down.svg';
 import Banner from './banner.svg';
 import Shadow from './shadow.svg';
+import ShadowRight from './shadow-right.svg';
+import CoinsGreenIcon from './coins-green.svg';
+import CalendarIcon from './calendar.svg';
 
 
 
@@ -74,8 +77,11 @@ export {
     ErrorIllustration,
     Banner,
     Shadow,
+    ShadowRight,
 
     // icons
+    CalendarIcon,
+    CoinsGreenIcon,
     ArrowDownIcon,
     CopyIcon,
     TrashIcon,

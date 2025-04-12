@@ -52,6 +52,8 @@ import LogoFullWhite from './logo_fullwhite.svg';
 import CopyIcon from './copy.svg';
 import ErrorIllustration from './404.svg';
 import ArrowDownIcon from './arrow-down.svg';
+import Banner from './banner.svg';
+import Shadow from './shadow.svg';
 
 
 
@@ -70,6 +72,8 @@ export {
     RaceFlag,
     NoDataSvg,
     ErrorIllustration,
+    Banner,
+    Shadow,
 
     // icons
     ArrowDownIcon,

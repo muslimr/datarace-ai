@@ -18,7 +18,7 @@ export const CompetitionsSection: React.FC = () => {
     const router = useRouter();
 
     const CATEGORY_LABELS: Record<number, string> = {
-        1: t('all'),
+        1: t('featured'),
         2: "Environment",
         3: "Education",
         4: "Oil & Industry",

@@ -273,5 +273,6 @@
   "contentIsRequired": "Məzmun tələb olunur",
   "imageIsRequired": "Şəkil tələb olunur",
   "uploadImage": "Şəkil Yüklə",
-  "challengeHasEnded": "Bu yarış başa çatıb"
+  "challengeHasEnded": "Bu yarış başa çatıb",
+  "featured": "Seçilmiş"
 }

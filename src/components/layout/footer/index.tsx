@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
                 <section className="flex flex-col items-center gap-10 md:flex-row md:justify-between">
                     <span className="text-gray-400">DataRace AI</span>
                     <div className="flex space-x-5 justify-center">
-                        <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                        <a href="#" className="text-gray-400 hover:text-white">
                             <InstagramIcon />
                             <span className="sr-only" aria-label='Instagram page'>Instagram page</span>
                         </a>

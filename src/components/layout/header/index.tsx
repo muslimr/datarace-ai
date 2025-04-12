@@ -74,11 +74,11 @@ export const Header: React.FC = () => {
                         {navLinks}
                     </ul>
 
-                    <div className="flex items-center justify-end lg:w-[30%] h-full gap-2 md:gap-4">
-                        <UserProfile />
+                    <div className="flex items-center justify-end lg:w-[30%] h-full gap-2">
                         <div className='hidden md:flex'>
                             <LanguageSwitcher />
                         </div>
+                        <UserProfile />
                     </div>
                 </nav>
             </header>

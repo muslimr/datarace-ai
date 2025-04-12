@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { StarsIcon } from '@assets/icons';
+import { Banner, Shadow, StarsIcon } from '@assets/icons';
 import { CategoriesSection } from '@components/features/home/categories-section';
 import { BlogSection, CompetitionsSection, DatasetsSection } from '@components/features/home';
 import { IParamsLanguage } from 'types/lang-types';
@@ -96,22 +96,19 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
     return (
         <div className="min-h-screen flex flex-col">
             <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
-            <main id="main-content" className="flex-grow bg-gray-50 px-5 py-20 md:px-0 md:py-40">
-                <section className="flex flex-col w-full items-center text-center md:flex-row md:justify-between">
-                    <div className="flex md:hidden w-full py-10 items-center justify-center">
-                        <TeamBrainstorming />
+            <main id="main-content" className="flex-grow bg-gray-50 px-5 py-20 md:px-0 md:pb-40">
+                <section className="flex flex-col container mx-auto w-full items-center text-center md:flex-row md:px-7 md:justify-between">
+                    <div className="flex items-center absolute animate-left-svg left-0 top-10 z-0">
+                        <Shadow />
                     </div>
-                    <div className="hidden md:flex items-center min-w-[20%] animate-left-svg">
-                        <TeamBrainStorm />
-                    </div>
-                    <div className="md:px-20 space-y-7">
-                        <div className="flex justify-center content-center">
-                            <StarsIcon className="hidden md:flex -mt-10 md:-ml-[60px] animate-star" aria-hidden="true" />
-                            <h1 className="text-4xl font-semibold text-gray-800">
+                    <div className="flex flex-col items-start space-y-7 z-20">
+                        <div className="flex">
+                            <h1 className="text-5xl text-start font-bold text-[#081232]">
                                 {t('title')}
                             </h1>
+                            <StarsIcon className="hidden md:flex -mt-10 animate-star" aria-hidden="true" />
                         </div>
-                        <p className="text-md text-gray-600">
+                        <p className="text-md text-gray-600 text-start">
                             {t('description')}
                         </p>
                         <Link
@@ -122,8 +119,8 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
                             {t('seeOurRaces')}
                         </Link>
                     </div>
-                    <div className="hidden md:flex items-center justify-end min-w-[20%] animate-right-svg">
-                        <HumanRight />
+                    <div className="hidden md:flex items-center justify-end animate-right-svg">
+                        <Banner />
                     </div>
                 </section>
 

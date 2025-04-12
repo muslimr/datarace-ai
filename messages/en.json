@@ -5,8 +5,8 @@
   "description": "DataRace is an innovative platform designed to bring data scientists and AI enthusiasts together to compete in data-driven challenges.",
   "aboutUs": "About Us",
   "allRaces": "All races",
-  "races": "Races",
-  "race": "Race",
+  "races": "Competitions",
+  "race": "Competition",
   "faq": "FAQ",
   "faqTitle": "Frequently Asked Questions",
   "contact": "Contact",
@@ -274,5 +274,6 @@
   "contentIsRequired": "Content is required",
   "imageIsRequired": "Image is required",
   "uploadImage": "Upload Image",
-  "challengeHasEnded": "This challenge has ended"
+  "challengeHasEnded": "This challenge has ended",
+  "featured": "Featured"
 }

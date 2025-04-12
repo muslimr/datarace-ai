@@ -96,14 +96,14 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
     return (
         <div className="min-h-screen flex flex-col">
             <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
-            <main id="main-content" className="flex-grow bg-gray-50 px-5 py-20 md:px-0 md:pb-40">
-                {/* <section className="flex flex-col container mx-auto w-full items-center text-center md:flex-row md:px-7 md:justify-between">
+            <main id="main-content" className="flex-grow px-5 pt-20 md:px-0">
+                <section className="flex flex-col container mx-auto w-full items-center text-center md:flex-row md:px-7 md:justify-between">
                     <div className="flex items-center absolute animate-left-svg left-0 top-10 z-0">
                         <Shadow />
                     </div>
                     <div className="flex flex-col items-start space-y-7 z-20">
                         <div className="flex">
-                            <h1 className="text-5xl text-start font-bold text-[#081232]">
+                            <h1 className="text-4xl md:text-5xl text-start font-bold text-[#081232]">
                                 {t('title')}
                             </h1>
                             <StarsIcon className="hidden md:flex -mt-10 animate-star" aria-hidden="true" />
@@ -119,26 +119,24 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
                             {t('seeOurRaces')}
                         </Link>
                     </div>
-                    <div className="hidden md:flex items-center justify-end animate-right-svg">
+                    <div className="-mt-[30px] max-w-[110%] md:mt-0 md:max-w-full flex items-center justify-end animate-right-svg">
                         <Banner />
                     </div>
-                </section> */}
+                </section>
 
                 <section className="w-full overflow-x-auto py-[6rem] hide-scrollbar md:px-7">
                     <CategoriesSection />
                 </section>
 
-                <section className="container mx-auto md:px-7">
+                <section className="container mx-auto md:px-7 pb-10">
                     <CompetitionsSection />
                 </section>
 
-                <section className="container mx-auto md:px-7">
-                    <DatasetsSection />
+                <section className="md:bg-[#FAFAFA] py-10">
+                    <div className='container mx-auto md:px-7 '>
+                        <DatasetsSection />
+                    </div>
                 </section>
-
-                {/* <section className="container mx-auto md:px-7">
-                    <BlogSection />
-                </section> */}
             </main>
         </div>
     );

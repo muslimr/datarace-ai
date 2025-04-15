@@ -57,7 +57,7 @@ import Shadow from './shadow.svg';
 import ShadowRight from './shadow-right.svg';
 import CoinsGreenIcon from './coins-green.svg';
 import CalendarIcon from './calendar.svg';
-import PaperIcon from './Paper.svg';
+import PaperIcon from './paper.svg';
 
 
 

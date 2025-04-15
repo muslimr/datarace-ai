@@ -34,9 +34,10 @@ export const datasetsApi = createApi({
             invalidatesTags: ['AllDatasets', 'MyDatasets'],
         }),
         getDatasetInfo: builder.query<IDataset, IDatasetInfoRequest>({
-            query: ({ id }) => ({
+            query: ({ id, lang }) => ({
                 url: `/datasets/${id}`,
                 method: 'GET',
+                headers: { "Accept-language": lang || "en" }
             }),
             providesTags: ['DatasetInfo'],
         }),

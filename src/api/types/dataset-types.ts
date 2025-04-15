@@ -53,6 +53,7 @@ export interface IDatasetsResponse {
 
 export interface IDatasetInfoRequest {
     id: string | number,
+    lang: string,
 }
 
 

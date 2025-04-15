@@ -1,13 +1,12 @@
 "use client";
 
+import React, { useState } from 'react';
 import { useLazyGetCompetitionsQuery } from '@api/competition-api';
 import { AuthModal, TablePagination } from '@components/shared';
 import RaceItem from '@components/shared/race-item';
 import CompetitionsSkeleton from '@components/shared/skeletons/competitions-skeleton';
 import { RootState } from '@store/store';
-import { useLocale, useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 
 

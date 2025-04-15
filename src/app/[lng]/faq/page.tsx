@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
-import { Metadata } from 'next';
-import { ExpandableInfoSection, Loader } from '@components/shared';
 import Link from 'next/link';
-import { PlusIcon } from '@assets/icons';
+import { Metadata } from 'next';
+import { Loader } from '@components/shared';
 import { HelpSection } from '@components/features';
 import { IParamsLanguage } from 'types/lang-types';
 import { useTranslations } from 'next-intl';
@@ -21,7 +20,7 @@ const FAQ: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
         <Suspense fallback={<Loader />}>
             <div className="min-h-screen flex flex-col">
                 <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
-                <main id="main-content" className="container mx-auto flex-grow px-5 md:px-7 py-[4rem] md:py-[6rem]">
+                <main id="main-content" className="container mx-auto flex-grow px-5 md:px-10 lg:px-40 py-[4rem] md:py-[6rem]">
                     {/* Breadcrumb */}
                     <nav className="text-sm flex justify-start items-center text-gray-600 space-x-3">
                         <Link href={`/${lng}`} className="hover:text-primaryLight">{t('mainPage')}</Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { CategoriesSection, CompetitionsSection } from '@components/features/home';
+import { CategoriesSection } from '@components/features/home';
 import { CompetitionsTable } from '@components/features';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';

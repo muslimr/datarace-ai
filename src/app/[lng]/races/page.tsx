@@ -22,14 +22,13 @@ const Races: React.FC = () => {
                 <section className="container mx-auto px-5 md:px-7 w-full space-y-10 mb-10">
                     <div className="flex justify-between">
                         <div>
+                            <h2 className="text-[32px] md:text-[2.3rem] font-medium">{t('races')}</h2>
                             {/* Breadcrumb */}
                             <nav className="text-sm flex justify-start items-center text-gray-600 space-x-2">
                                 <Link href={`/${lng}`} className="hover:text-primaryLight">{t('mainPage')}</Link>
                                 <span className="text-lg">&gt;</span>
                                 <span>{t('competitions')}</span>
                             </nav>
-                            <h2 className="text-[32px] md:text-[2.3rem] font-medium">{t('chooseYourCompetitions')}</h2>
-                            <p className="text-md text-gray-700">{t('competitionDescription')}</p>
                         </div>
                     </div>
                     <CategoriesSection />

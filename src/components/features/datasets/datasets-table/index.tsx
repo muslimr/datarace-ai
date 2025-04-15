@@ -10,6 +10,7 @@ import { AuthModal, NoData, TablePagination } from '@components/shared';
 import { useDispatch } from 'react-redux';
 import { setDatasetCount } from '@slices/dataset-slice';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 
 interface ICompetitionsTable {
@@ -19,6 +20,7 @@ interface ICompetitionsTable {
 
 export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
 
+    let lng = useLocale();
     const searchParams = useSearchParams();
     const dispatch = useDispatch();
     const pathname = usePathname();
@@ -48,6 +50,7 @@ export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
     React.useEffect(() => {
         triggerGetDatasets({
             data: { page: currentPage, count: itemsPerPage },
+            lang: lng,
         }).then((response) => {
             if (response?.data?.totalElements) {
                 dispatch(setDatasetCount(response?.data?.totalElements));
@@ -57,7 +60,7 @@ export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
                 setTotalPages(1)
             }
         });
-    }, [currentPage, triggerGetDatasets]);
+    }, [currentPage, triggerGetDatasets, lng]);
 
 
     React.useEffect(() => {

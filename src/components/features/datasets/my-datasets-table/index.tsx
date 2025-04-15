@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useLazyGetMyDatasetsQuery } from '@api/datasets-api';
 import { RootState } from '@store/store';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 import CompetitionsSkeleton from '@components/shared/skeletons/competitions-skeleton';
 import DatasetItem from '@components/shared/dataset-item';
@@ -17,7 +17,9 @@ interface ICompetitionsTable {
 }
 
 export const MyDatasetsTable: React.FC<ICompetitionsTable> = () => {
-    const t = useTranslations();
+
+    let lng = useLocale();
+    let t = useTranslations();
 
     const { loading: datasetsLoading } = useSelector((state: RootState) => state.datasets);
     const [currentPage, setCurrentPage] = useState(0);
@@ -37,6 +39,7 @@ export const MyDatasetsTable: React.FC<ICompetitionsTable> = () => {
     React.useEffect(() => {
         triggerGetDatasets({
             data: { page: currentPage, count: itemsPerPage },
+            lang: lng,
         }).then((response) => {
             if (response?.data?.totalElements) {
                 setTotalPages(Math.ceil(response.data.totalElements / itemsPerPage));

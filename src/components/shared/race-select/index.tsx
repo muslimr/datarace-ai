@@ -65,33 +65,13 @@ const RaceSelect: React.FC<IRaceSelectProps> = (props) => {
 export default RaceSelect
 
 
-const SimpleSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competitionsCount, onClick }) => {
-    const t = useTranslations();
-    const lng = useLocale();
-
-    return (
-        <div onClick={onClick} className={`flex items-center w-full min-h-[80px] lg:min-w-[200px] ${selected ? 'bg-[#a5a5a5]' : 'bg-none'} h-md px-4 py-3 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#a5a5a5] transition-all duration-300 ease-in-out transform group`}>
-            <div className="column px-4">
-                <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
-                    {titles[lng]}
-                </p>
-                {
-                    !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
-                        {competitionsCount} {t('competitions3').toLowerCase()}
-                    </p>
-                }
-            </div>
-        </div>
-    );
-}
 
 const RaceTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competitionsCount, onClick }) => {
     const t = useTranslations();
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
                 <RaceIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
@@ -115,7 +95,7 @@ const EnvironmentTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, c
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
                 <EnvironmentIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
@@ -139,7 +119,7 @@ const EducationTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, com
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
                 <EducationIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
@@ -163,7 +143,7 @@ const IndustryTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, comp
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
                 <DropIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
@@ -187,7 +167,7 @@ const TechTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competit
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
                 <TechIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>

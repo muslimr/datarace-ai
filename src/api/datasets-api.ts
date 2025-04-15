@@ -10,18 +10,20 @@ export const datasetsApi = createApi({
     tagTypes: ['AllDatasets', 'MyDatasets', 'DatasetInfo', 'DatasetComments'],
     endpoints: (builder) => ({
         getAllDatasets: builder.query<IDatasetsResponse, IDatasetsRequest>({
-            query: ({ data }) => ({
+            query: ({ data, lang }) => ({
                 url: `/datasets/public/page?isMyDataset=false`,
                 method: 'GET',
                 params: { page: data.page, count: data.count },
+                headers: { "Accept-language": lang || "en" }
             }),
             providesTags: ['AllDatasets'],
         }),
         getMyDatasets: builder.query<IDatasetsResponse, IDatasetsRequest>({
-            query: ({ data }) => ({
+            query: ({ data, lang }) => ({
                 url: `/datasets/public/page?isMyDataset=true`,
                 method: 'GET',
                 params: { page: data.page, count: data.count },
+                headers: { "Accept-language": lang || "en" }
             }),
             providesTags: ['MyDatasets'],
         }),

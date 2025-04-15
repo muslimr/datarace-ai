@@ -37,8 +37,9 @@ export const BlogSection: React.FC = () => {
     React.useEffect(() => {
         triggerGetDatasets({
             data: { page: 0, count: 6 },
+            lang: lng,
         });
-    }, [triggerGetDatasets]);
+    }, [triggerGetDatasets, lng]);
 
 
     if (datasetsLoading)

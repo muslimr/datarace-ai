@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Banner, Shadow, StarsIcon } from '@assets/icons';
+import { StarsIcon } from '@assets/icons';
 import { CategoriesSection } from '@components/features/home/categories-section';
 import { BlogSection, CompetitionsSection, DatasetsSection } from '@components/features/home';
 import { IParamsLanguage } from 'types/lang-types';
@@ -81,9 +81,8 @@ export async function generateMetadata() {
 
 
 // Dynamic imports for better performance
-const TeamBrainStorm = dynamic(() => import('@assets/icons/team-brainstorm.svg').then(mod => mod.default));
-const TeamBrainstorming = dynamic(() => import('@assets/icons/team-brainstorming.svg').then(mod => mod.default));
-const HumanRight = dynamic(() => import('@assets/icons/human-right.svg').then(mod => mod.default));
+const Shadow = dynamic(() => import('@assets/icons/shadow.svg').then(mod => mod.default));
+const Banner = dynamic(() => import('@assets/icons/banner.svg').then(mod => mod.default));
 
 
 const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
@@ -124,7 +123,7 @@ const Home: React.FC<IParamsLanguage> = ({ params: { lng } }) => {
                     </div>
                 </section>
 
-                <section className="w-full overflow-x-auto py-[6rem] hide-scrollbar md:px-7">
+                <section className="container mx-auto w-full overflow-x-auto py-[6rem] hide-scrollbar md:px-7">
                     <CategoriesSection />
                 </section>
 

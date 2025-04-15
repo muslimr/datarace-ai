@@ -48,7 +48,7 @@ const DatasetItem: React.FC<DatasetProps> = (props) => {
             </div>
             <div className="flex flex-col py-5 space-y-2 justify-between items-between">
                 <div className="h-[90px]">
-                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text pb-1 group-hover:text-primary">{title}</h3>
+                    <h3 className="text-md font-semibold text-customBlue-900 truncate-text-2 pb-1 group-hover:text-primary">{title}</h3>
                     <p className="text-gray-500 truncate-text description-font">
                         <div dangerouslySetInnerHTML={{ __html: description }}></div>
                     </p>

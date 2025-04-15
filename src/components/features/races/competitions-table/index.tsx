@@ -75,7 +75,7 @@ export const CompetitionsTable: React.FC<ICompetitionsTable> = () => {
         <>
             <div className="flex justify-between mb-10">
                 <div className="w-full space-y-3">
-                    <h2 className="text-[32px] md:text-[2.3rem]">{CATEGORY_LABELS[selectedCategory]} <span className="font-medium">{selectedCategory == 1 ? t('competitions') : t('competitions2')}</span></h2>
+                    <h2 className="text-[32px] md:text-[2.3rem] font-medium">{CATEGORY_LABELS[selectedCategory]} {selectedCategory == 1 ? t('competitions') : t('competitions2')}</h2>
                     <p className="text-md text-gray-700">{t('competitionDescription')}</p>
                 </div>
             </div>

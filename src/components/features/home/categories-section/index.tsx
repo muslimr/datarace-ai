@@ -37,7 +37,7 @@ export const CategoriesSection: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto overflow-scroll flex flex-col gap-3 lg:flex-row lg:space-y-0 md:px-7">
+        <div className="container mx-auto overflow-scroll flex gap-3 lg:flex-row lg:space-y-0">
             {categories && categories.map((item: IRaceType, i: number) => (
                 <RaceSelect key={i} {...item} type={item.titles.en} />
             ))}

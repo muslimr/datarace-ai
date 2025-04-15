@@ -28,6 +28,7 @@ export interface IDatasetFilesDto {
 
 export interface IDatasetsRequest {
     data: { page: number, count: number },
+    lang: string,
 }
 
 export interface IDatasetCreateRequest {

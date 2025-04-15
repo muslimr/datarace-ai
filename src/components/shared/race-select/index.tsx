@@ -101,7 +101,7 @@ const RaceTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competit
                 </p>
                 {
                     !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
+                    <p className={`text-sm transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-[#444355]'}`}>
                         {competitionsCount} {t('competitions3').toLowerCase()}
                     </p>
                 }
@@ -125,7 +125,7 @@ const EnvironmentTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, c
                 </p>
                 {
                     !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
+                    <p className={`text-sm transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-[#444355]'}`}>
                         {competitionsCount} {t('competitions3').toLowerCase()}
                     </p>
                 }
@@ -149,7 +149,7 @@ const EducationTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, com
                 </p>
                 {
                     !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
+                    <p className={`text-sm transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-[#444355]'}`}>
                         {competitionsCount} {t('competitions3').toLowerCase()}
                     </p>
                 }
@@ -173,7 +173,7 @@ const IndustryTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, comp
                 </p>
                 {
                     !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
+                    <p className={`text-sm transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-[#444355]'}`}>
                         {competitionsCount} {t('competitions3').toLowerCase()}
                     </p>
                 }
@@ -197,7 +197,7 @@ const TechTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competit
                 </p>
                 {
                     !!competitionsCount &&
-                    <p className={`text-sm text-gray-400 transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
+                    <p className={`text-sm transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-[#444355]'}`}>
                         {competitionsCount} {t('competitions3').toLowerCase()}
                     </p>
                 }

@@ -28,7 +28,7 @@ export const CategoriesSection: React.FC = () => {
 
     if (isLoading) {
         return (
-            <div className="container mx-auto overflow-scroll flex flex-col justify-center space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
+            <div className="container mx-auto overflow-scroll flex flex-col justify-center space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0 md:px-7">
                 {[...Array(6)].map((_, index) => (
                     <RaceSelectSkeleton key={index} />
                 ))}
@@ -37,7 +37,7 @@ export const CategoriesSection: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto overflow-scroll flex flex-col gap-3 lg:flex-row lg:space-y-0">
+        <div className="container mx-auto overflow-scroll flex flex-col gap-3 lg:flex-row lg:space-y-0 md:px-7">
             {categories && categories.map((item: IRaceType, i: number) => (
                 <RaceSelect key={i} {...item} type={item.titles.en} />
             ))}

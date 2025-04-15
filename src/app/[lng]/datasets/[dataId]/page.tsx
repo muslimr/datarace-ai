@@ -20,7 +20,7 @@ const DatasetDetails: React.FC = () => {
 
     const [isSidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
     const [deleteDataset] = useDeleteDatasetMutation();
-    const { data: datasetInfo, error, isLoading, refetch } = useGetDatasetInfoQuery({ id: dataId as string }, { skip: !dataId });
+    const { data: datasetInfo, error, isLoading, refetch } = useGetDatasetInfoQuery({ id: dataId as string, lang: lng }, { skip: !dataId });
 
 
     const onDeleteDataset = async () => {

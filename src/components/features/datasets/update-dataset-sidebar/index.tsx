@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { FormInput } from '@components/shared';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -22,6 +22,7 @@ interface IFormInput extends IDatasetCreateRequest { }
 
 export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, setSidebarOpen }) => {
     const t = useTranslations();
+    const lng = useLocale();
     const params = useParams();
     const { dataId } = params;
     const datasetId: string = Array.isArray(dataId) ? dataId[0] : dataId;
@@ -30,7 +31,7 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
     const [imageId, setImageId] = React.useState<number | null>(null);
     const [tags, setTags] = React.useState<{ name: string }[]>([]);
 
-    const { data: datasetInfo, error: dataInfoError, isLoading: dataInfoLoading, refetch } = useGetDatasetInfoQuery({ id: dataId as string }, { skip: !dataId || !visible });
+    const { data: datasetInfo, error: dataInfoError, isLoading: dataInfoLoading, refetch } = useGetDatasetInfoQuery({ id: dataId as string, lang: lng }, { skip: !dataId || !visible });
     const [updateDataset, { isLoading, error }] = useUpdateDatasetMutation();
 
     const validationSchema = Yup.object().shape({

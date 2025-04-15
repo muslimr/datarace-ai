@@ -27,6 +27,7 @@ export const ScoreBoardSection: React.FC = () => {
     React.useEffect(() => {
         triggerGetScoreBoard({
             data: { page: currentPage, count: itemsPerPage, competitionId: competitionInfo?.id },
+            lang: lng,
         }).then((response) => {
             if (response?.data?.totalElements) {
                 setTotalPages(Math.ceil(response.data.totalElements / itemsPerPage));
@@ -34,7 +35,12 @@ export const ScoreBoardSection: React.FC = () => {
                 setTotalPages(1)
             }
         });
-    }, [currentPage, triggerGetScoreBoard, competitionInfo?.id]);
+    }, [
+        lng,
+        currentPage,
+        triggerGetScoreBoard,
+        competitionInfo?.id,
+    ]);
 
 
     React.useEffect(() => {
@@ -58,11 +64,14 @@ export const ScoreBoardSection: React.FC = () => {
         setIsClient(true);  // This ensures the code runs only on the client side
     }, []);
 
+
     if (!isClient) return null; // Avoid rendering on the server to prevent mismatch
 
+    
     if (!competitionLoading && !isLoading && !scoreBoardData?.userCompetitions?.length) {
         return <NoData />
     }
+
 
     return (
         <Suspense fallback={<CompetitionInfoSectionSkeleton />}>
@@ -105,7 +114,6 @@ export const ScoreBoardSection: React.FC = () => {
                     </tbody>
                 </table>
             </div>
-
 
             {/* Pagination Controls */
                 !!scoreBoardData?.totalElements &&

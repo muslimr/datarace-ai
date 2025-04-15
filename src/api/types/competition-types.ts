@@ -11,15 +11,18 @@ export interface IMessageResponse {
 
 export interface ICompetitionsRequest {
     categoryId: number;
+    lang: string,
     data: { page: number, count: number },
 }
 
 export interface IAttendedCompetitionsRequest {
     data: { page: number, count: number, userHasSubmitted?: boolean },
+    lang: string,
 }
 
 export interface IScoreboardRequest {
     data: { page: number, count: number, competitionId?: string | number },
+    lang: string,
 }
 
 export interface IAttendedCompetition {

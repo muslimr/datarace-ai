@@ -10,24 +10,27 @@ export const competitionApi = createApi({
     tagTypes: ['Competition', 'CompetitionComments'],
     endpoints: (builder) => ({
         getCompetitions: builder.query<ICompetitionsResponse, ICompetitionsRequest>({
-            query: ({ categoryId, data }) => ({
+            query: ({ categoryId, data, lang }) => ({
                 url: `/competitions/${categoryId}/page`,
                 method: 'GET',
                 params: { page: data.page, count: data.count },
+                headers: { "Accept-language": lang || "en" }
             }),
         }),
         getAttendedCompetitions: builder.query<IAttendedCompetitionsResponse, IAttendedCompetitionsRequest>({
-            query: ({ data }) => ({
+            query: ({ data, lang }) => ({
                 url: `/competitions/user/page`,
                 method: 'GET',
                 params: { page: data.page, count: data.count, userHasSubmitted: data.userHasSubmitted, criteria: {}, },
+                headers: { "Accept-language": lang || "en" },
             }),
         }),
         getScoreBoard: builder.query<IScoreboardResponse, IScoreboardRequest>({
-            query: ({ data }) => ({
+            query: ({ data, lang }) => ({
                 url: `/competitions/score/page`,
                 method: 'GET',
                 params: { page: data.page, count: data.count, competitionId: data.competitionId },
+                headers: { "Accept-language": lang || "en" },
             }),
         }),
         getCompetitionInfo: builder.query<ICompetition, ICompetitionInfoRequest>({

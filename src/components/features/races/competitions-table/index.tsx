@@ -6,7 +6,7 @@ import { AuthModal, TablePagination } from '@components/shared';
 import RaceItem from '@components/shared/race-item';
 import CompetitionsSkeleton from '@components/shared/skeletons/competitions-skeleton';
 import { RootState } from '@store/store';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 
 
@@ -18,6 +18,7 @@ interface ICompetitionsTable {
 
 export const CompetitionsTable: React.FC<ICompetitionsTable> = () => {
     const t = useTranslations();
+    let lng = useLocale();
 
     const { selectedCategory, loading: categoryLoading } = useSelector((state: RootState) => state.categories);
     const { loading: competitionLoading } = useSelector((state: RootState) => state.competitions);
@@ -50,6 +51,7 @@ export const CompetitionsTable: React.FC<ICompetitionsTable> = () => {
         triggerGetCompetitions({
             categoryId: selectedCategory,
             data: { page: currentPage, count: itemsPerPage },
+            lang: lng,
         }).then((response) => {
             if (response?.data?.totalCount) {
                 setTotalPages(Math.ceil(response.data.totalCount / itemsPerPage));
@@ -58,7 +60,12 @@ export const CompetitionsTable: React.FC<ICompetitionsTable> = () => {
                 setTotalPages(1)
             }
         });
-    }, [currentPage, selectedCategory, triggerGetCompetitions]);
+    }, [
+        lng,
+        currentPage,
+        selectedCategory,
+        triggerGetCompetitions,
+    ]);
 
 
     React.useEffect(() => {

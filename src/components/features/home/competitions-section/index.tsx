@@ -46,8 +46,9 @@ export const CompetitionsSection: React.FC = () => {
         triggerGetCompetitions({
             categoryId: selectedCategory,
             data: { page: 0, count: 6 },
+            lang: lng,
         });
-    }, [selectedCategory, triggerGetCompetitions]);
+    }, [selectedCategory, triggerGetCompetitions, lng]);
 
 
     if (categoryLoading || competitionLoading)

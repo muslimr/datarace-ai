@@ -7,10 +7,11 @@ import AttendedCompetitionsSkeleton from '@components/shared/skeletons/attended-
 import { RootState } from '@store/store';
 import { useSelector } from 'react-redux';
 import { NoData } from '@components/shared';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 
 export const SubmittedProjects: React.FC = () => {
+    let lng = useLocale();
     let t = useTranslations();
 
     const { loading: competitionLoading } = useSelector((state: RootState) => state.competitions);
@@ -24,6 +25,7 @@ export const SubmittedProjects: React.FC = () => {
     React.useEffect(() => {
         triggerGetCompetitions({
             data: { page: currentPage, count: itemsPerPage, userHasSubmitted: true, },
+            lang: lng,
         }).then((response) => {
             if (response?.data?.totalElements) {
                 setTotalPages(Math.ceil(response.data.totalElements / itemsPerPage));
@@ -31,7 +33,7 @@ export const SubmittedProjects: React.FC = () => {
                 setTotalPages(1)
             }
         });
-    }, [currentPage, triggerGetCompetitions]);
+    }, [lng, currentPage, triggerGetCompetitions]);
 
 
     const handleNextPage = () => {

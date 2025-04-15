@@ -91,9 +91,9 @@ const RaceTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competit
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-[#FFB54D]' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#FFB54D] transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
-                <RaceIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out group-hover:fill-white ${selected ? 'fill-white' : 'fill-[#FFB54D]'}`} />
+                <RaceIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
             <div className="column">
                 <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
@@ -115,9 +115,9 @@ const EnvironmentTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, c
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-[#419A62]' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#419A62] transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
-                <EnvironmentIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out group-hover:fill-white ${selected ? 'fill-white' : 'fill-[#419A62]'}`} />
+                <EnvironmentIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
             <div className="column">
                 <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
@@ -139,9 +139,9 @@ const EducationTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, com
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-[#5D66EA]' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#5D66EA] transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
-                <EducationIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out group-hover:fill-white ${selected ? 'fill-white' : 'fill-[#5D66EA]'}`} />
+                <EducationIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
             <div className="column">
                 <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
@@ -163,9 +163,9 @@ const IndustryTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, comp
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-[#57566D]' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#57566D] transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
-                <DropIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out group-hover:fill-white ${selected ? 'fill-white' : 'fill-[#57566D]'}`} />
+                <DropIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
             <div className="column">
                 <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>
@@ -187,9 +187,9 @@ const TechTypeSelect: React.FC<IRaceSelectProps> = ({ selected, titles, competit
     const lng = useLocale();
 
     return (
-        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-[#774CDC]' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-[#774CDC] transition-all duration-300 ease-in-out transform group`}>
+        <div onClick={onClick} className={`flex flex-col w-full lg:min-w-[200px] ${selected ? 'bg-primaryLight' : 'bg-none'} h-md px-5 py-4 rounded-2xl border border-gray-200 cursor-pointer shadow-sm hover:bg-primaryLight transition-all duration-300 ease-in-out transform group`}>
             <div className="flex-shrink-0 transition-all duration-300 ease-in-out transform">
-                <TechIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out group-hover:fill-white ${selected ? 'fill-white' : 'fill-[#774CDC]'}`} />
+                <TechIcon className={`w-[40px] text-current transition-colors duration-200 ease-in-out`} />
             </div>
             <div className="column">
                 <p className={`text-md font-medium transition-colors duration-200 ease-in-out group-hover:text-white ${selected ? 'text-white' : 'text-none'}`}>

@@ -46,10 +46,10 @@ const DatasetItem: React.FC<DatasetProps> = (props) => {
                     priority={true}
                 />
             </div>
-            <div className="flex flex-col py-5 space-y-2 justify-between items-between">
-                <div className="h-[90px]">
+            <div className="flex flex-col pt-5 space-y-2 justify-between items-between">
+                <div className="h-[110px]">
                     <h3 className="text-md font-semibold text-customBlue-900 truncate-text-2 pb-1 group-hover:text-primary">{title}</h3>
-                    <p className="text-gray-500 truncate-text description-font">
+                    <p className="text-gray-500 truncate-text description-font truncate-text-3">
                         <div dangerouslySetInnerHTML={{ __html: description }}></div>
                     </p>
                 </div>

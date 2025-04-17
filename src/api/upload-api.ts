@@ -51,7 +51,7 @@ export const uploadApi = createApi({
         }),
         uploadDatasetImage: builder.mutation<IProfileImageUploadResponse, IProfileImageUploadRequest>({
             query: ({ file }) => ({
-                url: '/files/upload/dataset-image',
+                url: '/files/upload/dataset-update-image',
                 method: 'POST',
                 data: file,
             }),

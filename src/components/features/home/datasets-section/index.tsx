@@ -74,6 +74,7 @@ export const DatasetsSection: React.FC = () => {
                     <DatasetItem
                         key={i}
                         {...item}
+                        description={item.content}
                         onClick={onClickDataset}
                     />
                 ))}

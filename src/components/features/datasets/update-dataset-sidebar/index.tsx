@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import DatasetImageUploader from '../dataset-image-uploader';
 import { useGetDatasetInfoQuery, useUpdateDatasetMutation } from '@api/datasets-api';
 import { toast } from 'react-toastify';
-import { IDatasetCreateRequest } from '@api/types/dataset-types';
+import { IDatasetUpdateRequest } from '@api/types/dataset-types';
 import { useParams } from 'next/navigation';
 import TextEditor from '@components/shared/text-editor';
 import TagInput from '@components/shared/tag-input';
@@ -18,7 +18,7 @@ interface IDatasetSidebarProps {
     setSidebarOpen: (val: boolean) => void;
 }
 
-interface IFormInput extends IDatasetCreateRequest { }
+interface IFormInput extends IDatasetUpdateRequest { }
 
 export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, setSidebarOpen }) => {
     const t = useTranslations();
@@ -40,7 +40,7 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
     });
 
     const { register, handleSubmit, formState: { errors }, setValue, watch, reset } = useForm<IFormInput>({
-        resolver: yupResolver(validationSchema),
+        // resolver: yupResolver(validationSchema),
         mode: 'onBlur',
     });
 
@@ -57,12 +57,12 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         try {
             await updateDataset({
+                ...data,
                 dataId: dataId as string,
                 datasetFileDownloadDto:
                     !!datasetInfo?.datasetFileDownloadDto?.length
                         ? [...datasetInfo?.datasetFileDownloadDto?.map(item => item.id)]
                         : [],
-                ...data,
                 tags
             }).unwrap();
             toast.success('Dataset has been updated!');
@@ -87,7 +87,7 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
             setValue('content', datasetInfo?.content);
             setValue('visibility', datasetInfo?.visibility);
             setValue('status', datasetInfo?.status);
-            setValue('datasetProfileImageId', datasetInfo?.imageId);
+            setValue('datasetUpdateProfileImageId', datasetInfo?.imageId);
             setImageId(datasetInfo.imageId || null);
             setTags(datasetInfo.tags || []);
         }
@@ -95,7 +95,7 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
 
 
     React.useEffect(() => {
-        setValue('datasetProfileImageId', imageId || undefined)
+        setValue('datasetUpdateProfileImageId', imageId || undefined)
     }, [imageId])
 
 

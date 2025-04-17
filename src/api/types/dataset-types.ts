@@ -66,7 +66,8 @@ export interface IDatasetUpdateRequest {
     visibility?: string,
     status?: string,
     usability?: number,
-    datasetProfileImageId?: number | null,
+    datasetImageId?: number | null,
+    datasetUpdateProfileImageId?: number | null,
     datasetFileDownloadDto: number[] | [],
     tags?: { name: string }[],
 }

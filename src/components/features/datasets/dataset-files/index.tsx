@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { saveAs } from 'file-saver';
-import { DocUpload, TrashIcon } from '@assets/icons';
+import { DocumentDownloadIcon, DocUpload, TrashIcon } from '@assets/icons';
 import { useUploadDatasetFileMutation } from '@api/upload-api';
 import { IDatasetFilesDto } from '@api/types/dataset-types';
 import { useDeleteDatasetFileMutation, useDeleteDatasetMutation } from '@api/datasets-api';
@@ -119,52 +119,48 @@ export const DatasetFiles: React.FC<IOriginalFilesProps> = ({ files, datasetId, 
             {
                 !!files?.length &&
                 <>
-                    <h2 className="text-2xl font-semibold text-black dark:text-white">
+                    {/* <h2 className="text-2xl font-semibold text-black dark:text-white">
                         {t('files')}
-                    </h2>
-                    <div className="overflow-x-auto border rounded-2xl bg-white">
-                        <table className="min-w-full border border-gray-600 rounded-lg overflow-hidden">
-                            {/* Table Header */}
-                            <thead className="text-gray-600">
-                                <tr>
-                                    <th className="py-3 px-6 text-left font-semibold">{t('id')}</th>
-                                    <th className="py-3 px-6 text-left font-semibold">{t('filename')}</th>
-                                    <th className="py-3 px-6 text-left font-semibold">{t('type')}</th>
-                                    <th className="py-3 px-6 text-left font-semibold"></th>
-                                </tr>
-                            </thead>
-
-                            {/* Table Body */}
-                            <tbody>
-                                {files?.map((row: any, index: number) => (
-                                    <tr
-                                        key={row.id}
-                                        className={`border-t border-gray-200 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                                            }`}
+                    </h2> */}
+                    <div className="flex flex-col gap-3">
+                        {files?.map((row: any, index: number) => (
+                            <div
+                                key={row.id}
+                                className={`flex bg-[#EFEFF2] rounded-xl p-3`}
+                            >
+                                <div className="flex bg-[#9493A5] rounded-xl text-md font-semibold text-white w-[60px] h-[60px] items-center justify-center">{row.fileType.toUpperCase()}</div>
+                                <div className="flex w-full items-center justify-between">
+                                    <div className="font-medium ml-3">{row.fileName}.{row.fileType}</div>
+                                    <div
+                                        className="flex items-center gap-2 h-full font-regmed bg-primary text-sm text-white px-4 py-1 rounded-lg ring-2 ring-primary hover:bg-primaryDark hover:ring-primaryDark hover:shadow-lg hover:shadow-neutral-300 focus:outline-none focus:ring-2 focus:ring-primaryDark transition duration-200 ease-in-out transform cursor-pointer"
+                                        onClick={() => isAuthenticated ? handleDownload(row.fileName, row.id, row.fileType) : setShowAuthModal(true)}
                                     >
-                                        <td className="py-3 px-6">{row.id}</td>
-                                        <td className="w-full py-3 px-6">{row.fileName}</td>
-                                        <td className="w-full py-3 px-6">{row.fileType}</td>
-                                        <td className="py-3 px-6 text-primary hover:text-primaryLight cursor-pointer" >
-                                            <div className='flex space-x-6'>
-                                                <div
-                                                    className="cursor-pointer"
-                                                    onClick={() => isAuthenticated ? handleDownload(row.fileName, row.id, row.fileType) : setShowAuthModal(true)}
-                                                >
-                                                    {t('download')}
-                                                </div>
-                                                {
-                                                    isEditable &&
-                                                    <div onClick={() => onDeleteFile(row.id)}>
-                                                        <TrashIcon />
-                                                    </div>
-                                                }
+                                        <DocumentDownloadIcon />
+                                        <span>{t('download')}</span>
+                                    </div>
+                                </div>
+
+                                {/* <td className="py-3 px-6">{row.id}</td>
+                                <td className="w-full py-3 px-6">{row.fileName}</td>
+                                <td className="w-full py-3 px-6">{row.fileType}</td>
+                                <td className="py-3 px-6 text-primary hover:text-primaryLight cursor-pointer" >
+                                    <div className='flex space-x-6'>
+                                        <div
+                                            className="cursor-pointer"
+                                            onClick={() => isAuthenticated ? handleDownload(row.fileName, row.id, row.fileType) : setShowAuthModal(true)}
+                                        >
+                                            {t('download')}
+                                        </div>
+                                        {
+                                            isEditable &&
+                                            <div onClick={() => onDeleteFile(row.id)}>
+                                                <TrashIcon />
                                             </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                        }
+                                    </div>
+                                </td> */}
+                            </div>
+                        ))}
                     </div>
 
                     <AuthModal

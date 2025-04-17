@@ -58,7 +58,9 @@ import ShadowRight from './shadow-right.svg';
 import CoinsGreenIcon from './coins-green.svg';
 import CalendarIcon from './calendar.svg';
 import PaperIcon from './paper.svg';
-
+import PrevIcon from './prev.svg';
+import NextIcon from './next.svg';
+import DocumentDownloadIcon from './document-download.svg';
 
 
 export {
@@ -81,6 +83,9 @@ export {
     ShadowRight,
 
     // icons
+    DocumentDownloadIcon,
+    PrevIcon,
+    NextIcon,
     PaperIcon,
     CalendarIcon,
     CoinsGreenIcon,

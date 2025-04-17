@@ -8,6 +8,7 @@ import { useDeleteDatasetMutation, useGetDatasetInfoQuery } from '@api/datasets-
 import { UpdateDatasetSidebar } from '@components/features/datasets/update-dataset-sidebar';
 import { DatasetFiles } from '@components/features/datasets/dataset-files';
 import { DatasetComments } from '@components/features';
+import { DatasetsSection } from '@components/features/home';
 
 
 const DatasetDetails: React.FC = () => {
@@ -71,13 +72,13 @@ const DatasetDetails: React.FC = () => {
 
                 {/* Main Content */}
                 <main id="#main-content" className="space-y-5">
-                    <section className="relative border rounded-2xl">
-                        <img src={datasetInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[20rem] rounded-2xl object-cover" />
+                    <section className="relative border">
+                        <img src={datasetInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[20rem] object-cover" />
                         <h1 className="absolute w-full bottom-0 left-0 text-2xl text-white font-regmed px-7 py-2 backdrop-blur-xl bg-dark/30">
                             {datasetInfo?.title}
                         </h1>
                     </section>
-                    <section className="p-8 grid grid-cols-1 lg:grid-cols-4 gap-8 rounded-2xl border border-gray-30">
+                    <section className="grid grid-cols-1 lg:grid-cols-4 gap-8 rounded-2xl">
                         <div className="lg:col-span-3 gap-8">
                             <div dangerouslySetInnerHTML={{ __html: datasetInfo?.content || '' }}></div>
                         </div>
@@ -114,6 +115,11 @@ const DatasetDetails: React.FC = () => {
                             datasetId={datasetId}
                             isEditable={datasetInfo?.isEditable}
                         />
+                    </section>
+                    <section className="pt-10">
+                        <div className='container mx-auto'>
+                            <DatasetsSection />
+                        </div>
                     </section>
                 </main>
             </div>

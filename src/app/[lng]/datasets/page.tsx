@@ -43,7 +43,8 @@ const Datasets: React.FC = () => {
                 </section>
 
                 <section className="container mx-auto px-7">
-                    <TabSelects tabs={TABS} />
+                    {/* <TabSelects tabs={TABS} /> */}
+                    <DatasetsTable />
                 </section>
             </main>
         </div>

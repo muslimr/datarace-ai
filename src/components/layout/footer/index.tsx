@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                         </p>
                     </div>
                     <div className="space-y-6">
-                        <h2 className="font-semibold">{t('company')}</h2>
+                        {/* <h2 className="font-semibold">{t('company')}</h2> */}
                         <ul className="text-sm font-light space-y-4">
                             <li>
                                 <Link href={`/${lng}/about-us`} className="hover:text-primary">{t('aboutUs')}</Link>
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div className="space-y-6">
-                        <h2 className="font-semibold">{t('races')}</h2>
+                        {/* <h2 className="font-semibold">{t('races')}</h2> */}
                         <ul className="text-sm font-light space-y-4">
                             <li>
                                 <Link href={`/${lng}/races`} className="hover:text-primary">{t('activeRaces')}</Link>
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div className="space-y-6">
-                        <h2 className="font-semibold">{t('contact')}</h2>
+                        {/* <h2 className="font-semibold">{t('contact')}</h2> */}
                         <ul className="text-sm font-light space-y-4">
                             <li>
                                 <Link href="mailto:info@datarace.ai" className="hover:text-primary">info@datarace.ai</Link>

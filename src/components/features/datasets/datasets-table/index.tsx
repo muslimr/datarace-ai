@@ -83,6 +83,7 @@ export const DatasetsTable: React.FC<ICompetitionsTable> = () => {
                     <DatasetItem
                         key={i}
                         {...item}
+                        description={item.content}
                     />
                 ))}
             </div>

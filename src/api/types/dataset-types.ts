@@ -70,6 +70,7 @@ export interface IDatasetUpdateRequest {
     datasetUpdateProfileImageId?: number | null,
     datasetFileDownloadDto: number[] | [],
     tags?: { name: string }[],
+    lang: string,
 }
 
 

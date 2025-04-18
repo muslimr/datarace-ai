@@ -48,6 +48,7 @@ export const datasetsApi = createApi({
                 url: `/datasets/${data.dataId}`,
                 method: 'PUT',
                 data: data,
+                headers: { "Accept-language": data.lang || "en" }
             }),
             invalidatesTags: ['DatasetInfo'],
         }),

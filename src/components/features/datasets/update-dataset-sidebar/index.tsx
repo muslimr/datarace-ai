@@ -63,7 +63,8 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
                     !!datasetInfo?.datasetFileDownloadDto?.length
                         ? [...datasetInfo?.datasetFileDownloadDto?.map(item => item.id)]
                         : [],
-                tags
+                tags,
+                lang: lng,
             }).unwrap();
             toast.success('Dataset has been updated!');
             setSidebarOpen(false);

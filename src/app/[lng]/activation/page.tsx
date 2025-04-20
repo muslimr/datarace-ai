@@ -7,7 +7,7 @@ import { FailedOperation, SuccessfullOperation } from '@components/features/acti
 import { useActivateUserQuery } from '@api/user-api';
 import { Loader } from '@components/shared';
 import { useSearchParams } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 enum ErrorType {
     EXCEED_REQUEST_COUNT = "EXCEED_REQUEST_COUNT",
@@ -26,6 +26,8 @@ interface ApiError {
 
 const ActivationPageContent: React.FC = () => {
     let lng = useLocale();
+    let t = useTranslations();
+
     const searchParams = useSearchParams();
     const token = searchParams.get('token');
 
@@ -52,19 +54,16 @@ const ActivationPageContent: React.FC = () => {
             {/* Left side with image */}
             <div className="w-full lg:w-1/2 relative hidden lg:block">
                 <Image
-                    src="/png/login.png"
-                    alt="Team Photo"
+                    src="/png/dr_banner.png"
+                    alt="Banner Picture"
                     layout="fill"
                     objectFit="cover"
                     className="h-full"
                     priority
                 />
-                <div className="absolute column w-full h-full content-end text-center px-20 py-[10%] space-y-7">
-                    <Link className="flex cursor-pointer justify-center mb-10" href={`/${lng}`}>
-                        <Image src="/svg/datarace-logo.svg" alt="Logo" width={250} height={70} />
-                    </Link>
-                    <h1 className="text-4xl font-medium">Join the race to AI excellence</h1>
-                    <p className="text-lg text-gray-500">DataRace is an innovative platform designed to bring data scientists and AI enthusiasts together to compete in data-driven challenges.</p>
+                <div className="absolute column w-full h-full content-end text-start px-20 py-[10%] space-y-7">
+                    <h1 className="text-5xl font-medium text-white md:max-w-[80%]">{t('title')}</h1>
+                    <p className="text-lg text-white">{t('description')}</p>
                 </div>
             </div>
 

@@ -76,7 +76,7 @@ const RaceItem: React.FC<RaceProps> = (props) => {
             <div className="flex flex-col p-5 space-y-3 text-start items-between">
                 <div className="h-[70px]">
                     <h3 className="text-md font-semibold text-customBlue-900 truncate-text-1 pb-1 group-hover:text-primary">{name}</h3>
-                    <p className="text-gray-500 truncate-text description-font">
+                    <p className="text-gray-500 truncate-text-2 description-font">
                         <div dangerouslySetInnerHTML={{ __html: text }}></div>
                     </p>
                 </div>

@@ -107,9 +107,6 @@ const SignInContent: React.FC = () => {
                     priority
                 />
                 <div className="absolute column w-full h-full content-end text-start px-20 py-[10%] space-y-7">
-                    {/* <Link className="flex cursor-pointer justify-center mb-10" href={`/${lng}`}>
-                        <Image src="/svg/datarace-logo.svg" alt="Logo" width={250} height={70} />
-                    </Link> */}
                     <h1 className="text-5xl font-medium text-white md:max-w-[80%]">{t('title')}</h1>
                     <p className="text-lg text-white">{t('description')}</p>
                 </div>

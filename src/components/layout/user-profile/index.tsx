@@ -90,11 +90,11 @@ export const UserProfile: React.FC<IUserProfileProps> = () => {
                         {t('signIn')}
                     </button>
                 </Link>
-                <Link href={`/${lng}/sign-up`}>
+                {/* <Link href={`/${lng}/sign-up`}>
                     <button type="button" className="inline-flex w-auto text-sm md:text-md text-center items-center px-3 md:px-4 py-2 text-white transition-all bg-gray-800 rounded-lg sm:w-auto hover:bg-dark hover:text-white shadow-neutral-300 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:shadow-none">
                         {t('signUp')}
                     </button>
-                </Link>
+                </Link> */}
             </div>
         );
     }

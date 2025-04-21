@@ -274,5 +274,8 @@
   "imageIsRequired": "Şəkil tələb olunur",
   "uploadImage": "Şəkil Yüklə",
   "challengeHasEnded": "Bu yarış başa çatıb",
-  "featured": "Seçilmiş"
+  "featured": "Seçilmiş",
+  "enterFullName": "Tam adınızı daxil edin",
+  "enterYourTopic": "Mövzunuzu daxil edin",
+  "enterYourMessage": "Mesajınızı daxil edin"
 }

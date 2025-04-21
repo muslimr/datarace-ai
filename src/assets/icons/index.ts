@@ -61,6 +61,9 @@ import PaperIcon from './paper.svg';
 import PrevIcon from './prev.svg';
 import NextIcon from './next.svg';
 import DocumentDownloadIcon from './document-download.svg';
+import MapIcon from './map.svg';
+import PhoneIcon from './phone.svg';
+import MailIcon from './mail.svg';
 
 
 export {
@@ -83,6 +86,9 @@ export {
     ShadowRight,
 
     // icons
+    MailIcon,
+    PhoneIcon,
+    MapIcon,
     DocumentDownloadIcon,
     PrevIcon,
     NextIcon,

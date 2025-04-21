@@ -275,5 +275,8 @@
   "imageIsRequired": "Image is required",
   "uploadImage": "Upload Image",
   "challengeHasEnded": "This challenge has ended",
-  "featured": "Featured"
+  "featured": "Featured",
+  "enterFullName": "Enter your full name",
+  "enterYourTopic": "Enter your topic",
+  "enterYourMessage": "Enter your message"
 }

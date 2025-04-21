@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Loader } from '@components/shared';
 import { useLocale, useTranslations } from 'next-intl';
 import { ContactForm, SignUpForm } from '@components/features';
-import { InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from '@assets/icons';
+import { InstagramIcon, LinkedinIcon, MailIcon, MapIcon, PhoneIcon, TwitterIcon, YoutubeIcon } from '@assets/icons';
 import Link from 'next/link';
 
 
@@ -33,10 +33,29 @@ const Contact: React.FC = () => {
                             {/* <p className="text-md text-gray-700">{t('contactDescription')}</p> */}
                         </div>
                     </div>
-                    <div className="flex w-full bg-white shadow-md">
-                        <div className="space-y-3">
-                            <h3 className="text-2xl font-medium">{t('contactInformation')}:</h3>
-                            <p className="text-md text-gray-700"><strong className="mr-2">{t('emailAddress')}: </strong> info@datarace.ai</p>
+                    <div className="flex flex-col md:flex-row w-full bg-white shadow-md rounded-xl p-10 gap-10">
+                        <div className="flex flex-col lg:w-[50%] gap-3">
+                            <div className="flex bg-[#F4F4F4] rounded-xl p-3 gap-2">
+                                <MapIcon />
+                                <div>
+                                    <h3 className="text-xs mb-2 text-gray-500">{t('address')}:</h3>
+                                    <p className="text-md text-gray-700">90A Nizami St, Baku 1010, Azerbaijan</p>
+                                </div>
+                            </div>
+                            <div className="flex bg-[#F4F4F4] rounded-xl p-3 gap-2">
+                                <PhoneIcon />
+                                <div>
+                                    <h3 className="text-xs mb-2 text-gray-500">{t('phone')}:</h3>
+                                    <p className="text-md text-gray-700">(+994) 50 987 00 14</p>
+                                </div>
+                            </div>
+                            <div className="flex bg-[#F4F4F4] rounded-xl p-3 gap-2">
+                                <MailIcon />
+                                <div>
+                                    <h3 className="text-xs mb-2 text-gray-500">{t('email')}:</h3>
+                                    <p className="text-md text-gray-700">info@datarace.ai</p>
+                                </div>
+                            </div>
                         </div>
                         <div className="flex lg:w-[50%]">
                             <ContactForm />

@@ -2,13 +2,13 @@
 
 import React, { Suspense, useState } from 'react';
 import Image from 'next/image';
-import { useChangePasswordMutation, useLoginUserMutation } from '@api/user-api';
+import { useChangePasswordMutation } from '@api/user-api';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { FormInput, Loader } from '@components/shared';
 import { toast } from 'react-toastify';
-import { EmailIcon, EyeClosedIcon, EyeIcon, GoogleIcon, } from '@assets/icons';
+import { EyeClosedIcon, EyeIcon, } from '@assets/icons';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { createSelector } from '@reduxjs/toolkit';

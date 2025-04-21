@@ -1,17 +1,23 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { CreateDatasetSidebar } from '../create-dataset-sidebar';
 import { useLocale, useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 import { RootState } from '@store/store';
-import Link from 'next/link';
+import { AuthModal } from '@components/shared';
+import { useRouter } from 'next/navigation';
 
 
 export const DatasetsHeaderSection = () => {
     const t = useTranslations();
     const lng = useLocale();
+    const router = useRouter();
+
+    const [showAuthModal, setShowAuthModal] = React.useState<boolean>(false);
     const [isSidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
+
     const { isAuthenticated } = useSelector((state: RootState) => state.user);
     const { loading: datasetsLoading, datasetsCount } = useSelector((state: RootState) => state.datasets);
 
@@ -25,22 +31,24 @@ export const DatasetsHeaderSection = () => {
                         <span>{t('datasets')}</span>
                     </nav>
                     <h2 className="text-[32px] md:text-[2.3rem] font-medium">{t('datasets')} {!!datasetsCount && <span className="text-gray-400 font-regular">({datasetsCount})</span>}</h2>
-                    {/* <p className="text-md text-gray-700">{t('competitionDescription')}</p> */}
                 </div>
-                {
-                    isAuthenticated &&
-                    <button
-                        className="inline-flex w-auto text-center items-center px-6 py-2.5 text-white transition-all bg-gray-700 rounded-lg sm:w-auto hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
-                        aria-label="Upload Dataset"
-                        onClick={() => setSidebarOpen(true)}
-                    >
-                        {t('createDataset')}
-                    </button>
-                }
+                <button
+                    className="inline-flex w-auto text-center items-center px-6 py-2.5 text-white transition-all bg-gray-700 rounded-lg sm:w-auto hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                    aria-label="Upload Dataset"
+                    onClick={() => isAuthenticated ? setSidebarOpen(true) : setShowAuthModal(true)}
+                >
+                    {t('createDataset')}
+                </button>
             </div>
             <CreateDatasetSidebar
                 visible={isSidebarOpen}
                 setSidebarOpen={setSidebarOpen}
+            />
+            <AuthModal
+                visible={showAuthModal}
+                onClose={() => setShowAuthModal(false)}
+                onSignUp={() => router.push(`/${lng}/sign-up`)}
+                onConfirm={() => router.push(`/${lng}/sign-in`)}
             />
         </>
     )

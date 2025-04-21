@@ -57,6 +57,7 @@ const Contact: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className="flex lg:w-[50%]">
                             <ContactForm />
                         </div>

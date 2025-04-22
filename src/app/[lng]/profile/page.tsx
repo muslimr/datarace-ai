@@ -98,9 +98,9 @@ const Profile: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <main className="flex-grow py-20">
-                <section className="container mx-auto px-7">
-                    <div className="flex flex-col rounded-3xl lg:flex-row lg:space-y-0 overflow-hidden shadow-md border-t border-t-primaryExtra">
-                        <div className="flex w-full relative">
+                <section className="container mx-auto px-7 pt-5">
+                    <div className="flex flex-col rounded-3xl lg:flex-row lg:space-y-0 overflow-hidden bg-[#F7F7F7] p-5">
+                        {/* <div className="flex w-full relative">
                             <Image
                                 src={"/svg/dr_banner.svg"}
                                 alt="Datarace Banner Image"
@@ -112,10 +112,10 @@ const Profile: React.FC = () => {
                                 <LogoFullWhite />
                                 <p className='text-md text-white font-light max-w-[80%] text-end'>{t('description')}</p>
                             </div>
-                        </div>
-                        <div className="flex flex-col items-center justify-center min-w-[30%]">
+                        </div> */}
+                        <div className="flex items-center justify-center min-w-[30%] gap-5">
                             <div
-                                className="relative w-[150px] h-[150px] min-w-[150px] min-h-[150px] rounded-full overflow-hidden border border-bg-gray-200"
+                                className="relative w-[100px] h-[100px] min-w-[100px] min-h-[100px] rounded-full overflow-hidden border bg-white p-5"
                                 onMouseEnter={() => setHovering(true)}
                                 onMouseLeave={() => setHovering(false)}
                             >
@@ -151,12 +151,12 @@ const Profile: React.FC = () => {
                             </div>
 
                             <div className="w-full flex flex-col space-y-3 md:flex-row justify-center md:space-y-0">
-                                <div className="w-full flex flex-col items-center md:justify-end">
+                                <div className="w-full flex flex-col items-start">
                                     <p className="text-[1.7rem] font-medium">{user?.fullName}</p>
-                                    <p className="text-md text-gray-500">{user?.email}</p>
+                                    {/* <p className="text-md text-gray-500">{user?.email}</p> */}
                                     {
                                         !!user?.nickname &&
-                                        <p className="text-md text-primary">@{user?.nickname}</p>
+                                        <p className="text-md text-gray-500"><span className='text-[#1CA4E8]'>@</span>{user?.nickname}</p>
                                     }
                                 </div>
                             </div>

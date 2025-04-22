@@ -62,20 +62,7 @@ const UserProfile: React.FC = () => {
         <div className="min-h-screen flex flex-col p-5">
             <main className="flex-grow py-20">
                 <section className="container flex flex-col mx-auto rounded-3xl lg:flex-row lg:space-y-0 overflow-hidden shadow-md border-t border-t-primaryExtra">
-                    <div className="flex w-full relative">
-                        <Image
-                            src={"/svg/dr_banner.svg"}
-                            alt="Datarace Banner Image"
-                            height={200}
-                            width={800}
-                            className="w-full h-[23rem] object-cover"
-                        />
-                        <div className='absolute flex flex-col items-end justify-end gap-7 px-20 py-[4rem] top-0 w-full h-full'>
-                            <LogoFullWhite />
-                            <p className='text-md text-white font-light max-w-[80%] text-end'>{t('description')}</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center min-w-[30%] py-6">
+                    <div className="flex items-center justify-center min-w-[30%] py-6">
                         <div
                             className="relative w-[150px] h-[150px] min-w-[150px] min-h-[150px] rounded-full overflow-hidden border border-bg-gray-200"
                         >
@@ -91,20 +78,34 @@ const UserProfile: React.FC = () => {
                         <div className="w-full flex flex-col gap-3 space-y-3 md:flex-row justify-center md:space-y-0">
                             <div className="w-full flex flex-col items-center md:justify-end">
                                 <p className="text-[1.7rem] font-medium">{userData?.fullName}</p>
-                                <p className="text-md text-gray-500">{userData?.email}</p>
+                                {/* <p className="text-md text-gray-500">{userData?.email}</p> */}
                                 {
                                     !!userData?.nickname &&
                                     <p className="text-md text-primary">@{userData?.nickname}</p>
                                 }
                             </div>
                         </div>
-                        <button
+                        {/* <button
                             aria-label="Share Blog"
                             className="inline-flex w-auto text-center items-center px-7 py-2 mt-3 text-white transition-all bg-primary rounded-lg sm:w-auto hover:bg-primaryDark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                             onClick={() => setShareModal(true)}
                         >
                             Share
-                        </button>
+                        </button> */}
+                    </div>
+
+                    <div className="flex w-full relative">
+                        <Image
+                            src={"/svg/dr_banner.svg"}
+                            alt="Datarace Banner Image"
+                            height={200}
+                            width={800}
+                            className="w-full h-[23rem] object-cover"
+                        />
+                        <div className='absolute flex flex-col items-end justify-end gap-7 px-20 py-[4rem] top-0 w-full h-full'>
+                            <LogoFullWhite />
+                            <p className='text-md text-white font-light max-w-[80%] text-end'>{t('description')}</p>
+                        </div>
                     </div>
                 </section>
 

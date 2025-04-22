@@ -2,6 +2,9 @@
 
 // DESIGN
 
-
+- profile design mobile
 
 // API
+
+- user's location
+- user's position

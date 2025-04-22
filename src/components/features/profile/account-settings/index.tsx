@@ -130,8 +130,8 @@ export const AccountSettings: React.FC = () => {
 
     return (
         <div>
-            <div className="space-y-5">
-                <form className="space-y-4 w-full sm:w-80" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex gap-5">
+                <form className="space-y-4 w-full sm:w-80 min-w-[30%]" onSubmit={handleSubmit(onSubmit)}>
                     <FormInput
                         label={t('fullName')}
                         type='string'

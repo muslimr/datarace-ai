@@ -13,6 +13,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from '@store/store';
 import { ConfirmationModal, FormInput } from '@components/shared';
 import { useLocale, useTranslations } from 'next-intl';
+import { TrashIcon } from '@assets/icons';
 
 
 
@@ -178,15 +179,24 @@ export const AccountSettings: React.FC = () => {
                 </form>
 
                 <div className="w-full">
-                    <div className="flex space-x-3 mb-2">
-                        <div className="h-[25px] w-[2px] bg-red" />
-                        <span className="text-lg font-medium">{t('deleteYourAccount')}</span>
+                    <div className="text-lg font-medium mb-2">{t('accountControl')}</div>
+                    <div className="flex w-full bg-red rounded-xl pl-[3px]">
+                        <div className="flex items-center justify-between w-full bg-[#F5F5F7] rounded-xl p-5">
+                            <div className="flex items-center gap-5">
+                                <TrashIcon />
+                                <div>
+                                    <span className="text-md font-medium">{t('deleteYourAccount')}</span>
+                                    <p className="text-xs text-[#2C2C2C] mt-1">{t('deleteAccDescription')}</p>
+                                </div>
+                            </div>
+
+                            <button type="button" onClick={() => setDeleteModal(true)} className="flex text-center justify-center px-4 py-2 text-red transition-all rounded-lg bg-red hover:bg-darkRed text-white shadow-neutral-300 dark:shadow-neutral-700 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:shadow-none">
+                                {t('delete')}
+                            </button>
+                        </div>
                     </div>
-                    <p className="text-sm mb-4">{t('deleteAccDescription')}</p>
-                    <button type="button" onClick={() => setDeleteModal(true)} className="mb-10 flex w-full sm:w-40 text-center justify-center px-4 py-2 text-red transition-all border border-red rounded-lg hover:bg-red hover:text-white shadow-neutral-300 dark:shadow-neutral-700 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:shadow-none">
-                        {t('delete')}
-                    </button>
-                    <button onClick={() => setLogoutModal(true)} className="flex w-full sm:w-40 text-center justify-center px-4 py-2 text-gray-500 transition-all bg-gray-100 rounded-lg hover:bg-primaryDark hover:text-white shadow-neutral-300 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:shadow-none">
+
+                    <button onClick={() => setLogoutModal(true)} className="flex w-full sm:w-40 mt-20 text-center justify-center px-4 py-2 text-gray-500 transition-all bg-gray-100 rounded-lg hover:bg-primaryDark hover:text-white shadow-neutral-300 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:shadow-none">
                         <span>{t('signOut')}</span>
                     </button>
                 </div>

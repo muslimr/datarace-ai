@@ -56,27 +56,30 @@ const RaceDetails: React.FC = () => {
 
                 {/* Main Content */}
                 <main id="#main-content" className="space-y-5">
-                    <section className="relative border rounded-2xl">
-                        {
-                            competitionInfo?.expirationDate &&
-                            <div className='absolute'>
-                                <CountdownTimer date={competitionInfo?.expirationDate || ''} />
-                            </div>
-                        }
-                        <img src={competitionInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[20rem] rounded-2xl object-cover" />
-                        <h1 className="absolute w-full bottom-0 left-0 text-2xl text-white font-regmed px-7 py-2 backdrop-blur-xl bg-dark/30">
-                            {competitionInfo?.name}
-                        </h1>
+                    <section className="flex flex-col lg:flex-row gap-10">
+                        <div className="flex relative rounded-2xl lg:min-w-[23rem] lg:max-w-[23rem]">
+                            <img src={competitionInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="md:w-full h-[15rem] rounded-2xl object-cover" />
+                        </div>
+                        <div className="flex flex-col justify-between min-w-[30%] h-[15rem]">
+                            <h1 className="bottom-0 left-0 text-2xl font-semibold">
+                                {competitionInfo?.name}
+                            </h1>
+                            {
+                                competitionInfo?.expirationDate &&
+                                <div className='flex flex-col gap-2'>
+                                    <label className='text-xs'>Time left:</label>
+                                    <CountdownTimer date={competitionInfo?.expirationDate || ''} />
+                                </div>
+                            }
+                        </div>
+                        {/* Right Sidebar */}
+                        <div className="min-w-[25%]">
+                            <RigthContent raceId={competitionId} />
+                        </div>
                     </section>
 
-                    <section className="p-4 md:p-8 grid grid-cols-1 lg:grid-cols-4 gap-8 rounded-2xl border border-gray-30">
-                        {/* Left Content */}
-                        <div className="lg:col-span-3">
-                            <TabSelects tabs={TABS} />
-                        </div>
-
-                        {/* Right Sidebar */}
-                        <RigthContent raceId={competitionId} />
+                    <section className="grid rounded-2xl">
+                        <TabSelects tabs={TABS} />
                     </section>
                     <section>
                         <CompetitionComments

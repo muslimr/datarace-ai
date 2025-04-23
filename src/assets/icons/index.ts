@@ -64,6 +64,7 @@ import DocumentDownloadIcon from './document-download.svg';
 import MapIcon from './map.svg';
 import PhoneIcon from './phone.svg';
 import MailIcon from './mail.svg';
+import GreenCertificate from './green-certificate.svg';
 
 
 export {
@@ -86,6 +87,7 @@ export {
     ShadowRight,
 
     // icons
+    GreenCertificate,
     MailIcon,
     PhoneIcon,
     MapIcon,

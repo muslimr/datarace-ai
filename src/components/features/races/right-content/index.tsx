@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { AuthModal, CompetitionInfoRightSkeleton, Modal } from '@components/shared';
-import { CertificateIcon, CheckFilledIcon, CoinsIcon, RaceFlag } from '@assets/icons';
+import { CertificateIcon, CheckFilledIcon, CoinsGreenIcon, CoinsIcon, GreenCertificate, RaceFlag } from '@assets/icons';
 import { RacesSidebar } from '../races-sidebar';
 import { useSelector } from 'react-redux';
 import { RootState } from '@store/store';
@@ -56,40 +56,43 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
 
     return (
         <div>
-            <div className="space-y-7">
+            <div className="space-y-7 border rounded-xl p-5">
                 {/* Prize */}
                 <div className="space-y-2 mb-auto">
-                    <div className="flex space-x-3 mb-5">
+                    <div className="flex space-x-3 mb-2">
                         <div className="h-[30px] w-[2px] bg-primaryLight" />
                         <span className="text-xl font-medium">{t('prize')}</span>
                     </div>
-                    <div className="flex items-center border border-primaryLight rounded-xl px-6 py-4 space-x-3">
-                        <CoinsIcon />
-                        <p className="text-2xl font-regmed text-primary">{competitionInfo?.currencySymbol} {competitionInfo?.awardAmount}</p>
+                    <div className="inline-flex items-center gap-3 border border-[#29B78140] bg-[#F3F9F5] py-2 px-3 rounded-lg">
+                        <CoinsGreenIcon />
+                        <p className="font-bold text-customBlue-900">{competitionInfo?.awardAmount} {competitionInfo?.currencySymbol}</p>
                     </div>
-                    <div className="flex items-center border border-primaryLight rounded-xl px-6 py-4 space-x-3">
-                        <CertificateIcon />
-                        <p className="text-md text-gray-500">{t('awardMedals')}</p>
+                    <div className="inline-flex items-center gap-2 border border-[#29B78140] bg-[#F3F9F5] py-2 px-3 rounded-lg">
+                        <GreenCertificate />
+                        <p className="text-customBlue-900">{t('awardMedals')}</p>
                     </div>
                 </div>
 
                 {/* Tags */}
-                <div className="space-y-2">
-                    <div className="flex space-x-3 mb-5">
-                        <div className="h-[30px] w-[2px] bg-primaryLight" />
-                        <span className="text-xl font-medium">{t('tags')}</span>
-                    </div>
+                {
+                    !!competitionInfo?.tags?.length &&
                     <div className="space-y-2">
-                        {
-                            competitionInfo?.tags?.map((tag, index) =>
-                                <div className="inline-block text-sm px-4 py-2 text-[1rem] rounded-lg space-x-2 mr-2 bg-gray-100">
-                                    <span className="text-primaryLight">#</span>
-                                    <span>{tag.name}</span>
-                                </div>
-                            )
-                        }
+                        <div className="flex space-x-3 mb-5">
+                            <div className="h-[30px] w-[2px] bg-primaryLight" />
+                            <span className="text-xl font-medium">{t('tags')}</span>
+                        </div>
+                        <div className="space-y-2">
+                            {
+                                competitionInfo?.tags?.map((tag, index) =>
+                                    <div className="inline-block text-sm px-4 py-2 text-[1rem] rounded-lg space-x-2 mr-2 bg-gray-100">
+                                        <span className="text-primaryLight">#</span>
+                                        <span>{tag.name}</span>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
-                </div>
+                }
 
                 {/* Join Button */
                     competitionInfo?.joinAvailable &&
@@ -106,7 +109,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                     !isAuthenticated &&
                     <button
                         onClick={() => setShowAuthModal(true)}
-                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-primary rounded-lg hover:bg-primaryDark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                         aria-label="Join the Race"
                     >
                         {t('joinTheRace')}

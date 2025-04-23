@@ -3,6 +3,7 @@
 // DESIGN
 
 - profile design mobile
+- races info mobile view
 
 // API
 

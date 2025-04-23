@@ -7,15 +7,13 @@ import React, { useEffect, useState } from "react";
 const CountdownTimer: React.FC<{ date: string }> = ({ date }) => {
     const targetDate = new Date(`${date}T00:00:00`).getTime();
 
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
     let t = useTranslations();
 
     const calculateTimeLeft = () => {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
 
         if (difference <= 0) {
-            // setTimerVisibility(false)
             return { days: 0, hours: 0, minutes: 0, seconds: 0 };
         }
 
@@ -38,7 +36,12 @@ const CountdownTimer: React.FC<{ date: string }> = ({ date }) => {
     }, []);
 
 
-    if (difference < 0) return (
+    if (
+        timeLeft.days === 0 &&
+        timeLeft.hours === 0 &&
+        timeLeft.minutes === 0 &&
+        timeLeft.seconds === 0
+    ) return (
         <div className="flex gap-2 p-5 rounded-xl">
             <div className="flex flex-col items-center gap-1">
                 <div className="flex flex-col items-center backdrop-blur-xl bg-red/50 px-3 py-2 rounded-md">

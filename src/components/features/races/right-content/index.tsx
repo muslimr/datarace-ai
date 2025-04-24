@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import { AuthModal, CompetitionInfoRightSkeleton, Modal } from '@components/shared';
-import { CertificateIcon, CheckFilledIcon, CoinsGreenIcon, CoinsIcon, GreenCertificate, RaceFlag } from '@assets/icons';
+import { AuthModal, Modal } from '@components/shared';
+import { CheckFilledIcon, CoinsGreenIcon, GreenCertificate, RaceFlag } from '@assets/icons';
 import { RacesSidebar } from '../races-sidebar';
 import { useSelector } from 'react-redux';
 import { RootState } from '@store/store';
@@ -27,10 +27,10 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
     const [selectedOption, setSelectedOption] = React.useState<string>('option1');
     const [isSidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
 
-    const { loading: competitionLoading, competitionInfo } = useSelector((state: RootState) => state.competitions);
+    const { competitionInfo } = useSelector((state: RootState) => state.competitions);
     const { isAuthenticated } = useSelector((state: RootState) => state.user);
 
-    const [joinCompetition, { data, isError, isLoading }] = useJoinCompetitionMutation();
+    const [joinCompetition] = useJoinCompetitionMutation();
 
     const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedOption(e.target.value);
@@ -58,7 +58,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
         <div>
             <div className="space-y-7 border rounded-xl p-5">
                 {/* Prize */}
-                <div className="space-y-2 mb-auto">
+                <div className="flex flex-col space-y-2 mb-auto">
                     <div className="flex space-x-3 mb-2">
                         <div className="h-[30px] w-[2px] bg-primaryLight" />
                         <span className="text-xl font-medium">{t('prize')}</span>

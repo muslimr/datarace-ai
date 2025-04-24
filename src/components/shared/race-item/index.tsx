@@ -80,7 +80,7 @@ const RaceItem: React.FC<RaceProps> = (props) => {
                         <div dangerouslySetInnerHTML={{ __html: text }}></div>
                     </p>
                 </div>
-                <div className="flex justify-between items-center pt-5">
+                <div className="flex justify-between items-center pt-2">
                     <div className="flex gap-2 border border-[#29B78140] bg-[#F3F9F5] pt-2 pb-1 px-2 rounded-lg">
                         <CoinsGreenIcon />
                         <p className="text-sm font-medium text-customBlue-900">{awardAmount} {currencySymbol}</p>

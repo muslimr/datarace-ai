@@ -19,3 +19,4 @@ export * from './blog-item';
 export * from './share-modal';
 export * from './table-pagination';
 export * from './countdown-timer';
+export * from './upvote-button';

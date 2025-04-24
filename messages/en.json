@@ -279,5 +279,7 @@
   "enterFullName": "Enter your full name",
   "enterYourTopic": "Enter your topic",
   "enterYourMessage": "Enter your message",
-  "accountControl": "Account control"
+  "accountControl": "Account control",
+  "upvote": "Upvote",
+  "upvoted": "Upvoted"
 }

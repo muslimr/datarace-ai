@@ -277,5 +277,8 @@
   "featured": "Seçilmiş",
   "enterFullName": "Tam adınızı daxil edin",
   "enterYourTopic": "Mövzunuzu daxil edin",
-  "enterYourMessage": "Mesajınızı daxil edin"
+  "enterYourMessage": "Mesajınızı daxil edin",
+  "accountControl": "Hesab idarəsi",
+  "upvote": "Səs ver",
+  "upvoted": "Səs verildi"
 }

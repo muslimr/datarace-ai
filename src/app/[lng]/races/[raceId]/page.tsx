@@ -57,7 +57,6 @@ const RaceDetails: React.FC = () => {
                     <UpvoteButton />
                 </div>
 
-
                 <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
 
                 {/* Main Content */}

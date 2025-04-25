@@ -6,3 +6,4 @@ export * from './competitions-table';
 export * from './score-board-section';
 export * from './datasets-section';
 export * from './competition-comment-reply-modal';
+export * from './featured-competitions-section';

@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import TabSelects from '@components/shared/tab-selects';
 import { GeneralSection } from '@components/features/races/general-section';
-import { DatasetsSection, RigthContent, ScoreBoardSection } from '@components/features';
+import { DatasetsSection, FeaturedCompetitionsSection, RigthContent, ScoreBoardSection } from '@components/features';
 import { useGetCompetitionInfoQuery } from '@api/competition-api';
 import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
@@ -54,7 +54,7 @@ const RaceDetails: React.FC = () => {
                         <div className='truncate-text-1'>{competitionInfo?.name}</div>
                     </nav>
 
-                    <UpvoteButton />
+                    {/* <UpvoteButton /> */}
                 </div>
 
                 <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
@@ -75,7 +75,7 @@ const RaceDetails: React.FC = () => {
                             {
                                 competitionInfo?.expirationDate &&
                                 <div className='flex flex-col gap-2'>
-                                    {/* <label className='text-xs'>Time left:</label> */}
+                                    <label className='text-xs'>Time left:</label>
                                     <CountdownTimer date={competitionInfo?.expirationDate || ''} />
                                 </div>
                             }
@@ -94,6 +94,12 @@ const RaceDetails: React.FC = () => {
                             competitionId={competitionId}
                             isEditable={competitionInfo?.isEditable}
                         />
+                    </section>
+
+                    <section className="py-10">
+                        <div className='container mx-auto'>
+                            <FeaturedCompetitionsSection />
+                        </div>
                     </section>
                 </main>
             </div>

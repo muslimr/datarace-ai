@@ -98,7 +98,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                     competitionInfo?.joinAvailable &&
                     <button
                         onClick={() => setShowModal(true)}
-                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-primary rounded-lg hover:bg-primaryDark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                         aria-label="Join the Race"
                     >
                         {t('joinTheRace')}

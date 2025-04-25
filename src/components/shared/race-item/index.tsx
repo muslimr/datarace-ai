@@ -17,6 +17,7 @@ interface IAttendedCompetition {
     nickname: string,
     phoneNumber: string | number,
     resultFileId: string,
+    scrollable?: boolean,
     imageUrl?: string,
     t?: (val: string) => string,
     lng?: string,
@@ -31,6 +32,7 @@ interface IRacesItemProps {
     awardAmount: number | string,
     lifeTimeDays: number | string,
     currencySymbol: string,
+    scrollable?: boolean,
     t?: (val: string) => string,
     lng?: string,
     onClick?: (e: any) => void,
@@ -44,7 +46,7 @@ const isAttendedCompetition = (props: RaceProps): props is IAttendedCompetition 
 };
 
 const RaceItem: React.FC<RaceProps> = (props) => {
-    let { onClick } = props;
+    let { scrollable, onClick } = props;
     let lng = useLocale();
     let t = useTranslations();
 
@@ -62,7 +64,7 @@ const RaceItem: React.FC<RaceProps> = (props) => {
 
 
     return (
-        <Link href={`/${lng}/races/${id}`} className="h-md rounded-custom_md select-none cursor-pointer overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group active:shadow-none bg-white">
+        <Link href={`/${lng}/races/${id}`} className={`h-md ${scrollable ? 'w-[300px]' : ''} rounded-custom_md select-none cursor-pointer overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group active:shadow-none bg-white`}>
             <div className="relative overflow-hidden">
                 <Image
                     src={imageUrl}

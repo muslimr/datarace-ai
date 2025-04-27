@@ -70,12 +70,6 @@ const config: Config = {
           '40%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        buttonAnimation: {
-          '0%': { opacity: '0.7', transform: 'scale(0)' },
-          '70%': { transform: 'scale(0)' },
-          '90%': { transform: 'scale(1.1)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
         leftSvgAnimation: {
           '0%': { opacity: '0.7', transform: 'scale(0) translateX(-500%)' },
           '70%': { transform: 'scale(1)' },
@@ -101,7 +95,6 @@ const config: Config = {
       animation: {
         'main-label': 'mainLabelAnimation 0.5s ease-in-out',
         'main-description': 'mainDescriptionAnimation 1s ease-in-out',
-        'button': 'buttonAnimation 0.5s ease-in-out',
         'left-svg': 'leftSvgAnimation 1s ease-in-out',
         'right-svg': 'rightSvgAnimation 1s ease-in-out',
         'star': 'starAnimation 1.5s ease-in-out',

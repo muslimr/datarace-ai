@@ -82,7 +82,7 @@ export const SignUpForm: React.FC = () => {
 
 
     return (
-        <div className="w-full mx-auto lg:max-w-md animate-right-svg">
+        <div className="w-full mx-auto lg:max-w-md">
             <div>
                 <Link className="flex items-center lg:hidden justify-center cursor-pointer mb-[50px]" href={`/${lng}`}>
                     <Image src="/svg/datarace-logo.svg" alt="Logo" width={250} height={70} priority />

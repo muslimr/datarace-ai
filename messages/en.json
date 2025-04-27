@@ -124,7 +124,7 @@
   "accept": "Accept",
   "contactDescription": "Feel free to share your questions and suggestions with us.",
   "contactInformation": "Contact Information",
-  "emailAddress": "Email Address",
+  "emailAddress": "E-mail Address",
   "socialLinks": "Social Media Links",
   "subject": "Subject",
   "message": "Message",
@@ -283,5 +283,7 @@
   "upvote": "Upvote",
   "upvoted": "Upvoted",
   "datasetInfo": "Dataset Info",
-  "competitionInfo": "Competition Info"
+  "competitionInfo": "Competition Info",
+  "back": "Back",
+  "blogInfo": "Blog Info"
 }

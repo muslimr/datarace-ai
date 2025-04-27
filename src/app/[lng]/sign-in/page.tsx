@@ -114,7 +114,7 @@ const SignInContent: React.FC = () => {
 
             {/* Right side with form */}
             <div className="w-full lg:w-1/2 bg-white content-center px-8 py-[30px] lg:p-20 overflow-y-scroll">
-                <div className="w-full mx-auto lg:max-w-md space-y-10 animate-right-svg">
+                <div className="w-full mx-auto lg:max-w-md space-y-10">
                     <Link className="flex items-center lg:hidden justify-center cursor-pointer mb-[50px]" href={`/${lng}`}>
                         <Image src="/svg/datarace-logo.svg" alt="Logo" width={250} height={70} priority />
                     </Link>

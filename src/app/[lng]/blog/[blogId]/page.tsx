@@ -45,7 +45,7 @@ const RaceDetails: React.FC = () => {
                         <span className="text-lg">&gt;</span>
                         <Link href={`/${lng}/blog`} className="hover:text-primaryLight">{t('blog')}</Link>
                         <span className="text-lg">&gt;</span>
-                        <div className='truncate-text-1'>{blogInfo?.title}</div>
+                        <div className='truncate-text-1'>{t('blogInfo')}</div>
                     </nav>
 
                     <div className='flex gap-3'>

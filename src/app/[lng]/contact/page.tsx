@@ -21,10 +21,10 @@ const Contact: React.FC = () => {
         <div className="min-h-screen flex flex-col">
             <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
             <main id="main-content" className="flex-grow bg-gray-50 py-[4rem] lg:py-[6rem] space-y-20">
-                <section className="container flex flex-col md:px-10 lg:px-40 mx-auto w-full justify-between space-y-20 lg:space-y-0">
-                    <div className="justify-between space-y-[50px]">
+                <section className="container flex flex-col md:px-10 lg:px-40 mx-auto w-full justify-between space-y-10">
+                    <div className="justify-between">
                         <div>
-                            <h1 className="text-[32px] md:text-[2.3rem] font-medium">{t('contact')}</h1>
+                            <h1 className="text-[32px] md:text-[2.3rem] font-semi">{t('contact')}</h1>
                             <nav className="text-sm flex justify-start items-center text-gray-600 space-x-3">
                                 <Link href={`/${lng}`} className="hover:text-primaryLight">{t('mainPage')}</Link>
                                 <span className="text-lg">&gt;</span>
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row w-full bg-white shadow-md rounded-xl p-10 gap-10">
-                        <div className="flex flex-col lg:w-[50%] gap-3">
+                        <div className="flex flex-col lg:min-w-[40%] gap-3">
                             <div className="flex bg-[#F4F4F4] rounded-xl p-3 gap-2">
                                 <MapIcon />
                                 <div>
@@ -57,8 +57,8 @@ const Contact: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        
-                        <div className="flex lg:w-[50%]">
+
+                        <div className="flex w-full">
                             <ContactForm />
                         </div>
                     </div>

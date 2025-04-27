@@ -51,7 +51,7 @@ export const ContactForm: React.FC = () => {
 
 
     return (
-        <div className="w-full mx-auto animate-right-svg">
+        <div className="w-full mx-auto">
             <form className="space-y-5 select-none" onSubmit={handleSubmit(onSubmit)}>
                 <FormInput
                     label={`${t('nameAndSurname')}*`}
@@ -85,12 +85,20 @@ export const ContactForm: React.FC = () => {
                     register={register}
                     errors={errors}
                 />
-                <button
-                    type="submit"
-                    className="w-full h-[50px] font-regmed bg-primary text-white py-2 rounded-lg ring-2 ring-primary hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:outline-none focus:ring-2 focus:ring-primaryDark focus:shadow-none focus:bg-primaryDark transition duration-200 ease-in-out transform disabled:bg-gray-400 disabled:ring-gray-400 disabled:cursor-not-allowed"
-                >
-                    {t('submit')}
-                </button>
+                <div className="flex items-center gap-5">
+                    <button
+                        type="submit"
+                        className="w-full h-[50px] font-regmed bg-gray-900 text-white py-2 rounded-lg ring-2 ring-gray-900 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:outline-none focus:ring-2 focus:ring-primaryDark focus:shadow-none focus:bg-primaryDark transition duration-200 ease-in-out transform disabled:bg-gray-400 disabled:ring-gray-400 disabled:cursor-not-allowed"
+                    >
+                        {t('signUp')}
+                    </button>
+                    <button
+                        type="button"
+                        className="w-full h-[50px] font-regmed bg-gray-300 text-gray-900 py-2 rounded-lg ring-2 ring-gray-300 hover:shadow-lg hover:shadow-neutral-300 hover:-tranneutral-y-px focus:outline-none focus:ring-2 focus:ring-primaryDark focus:shadow-none focus:bg-primaryDark transition duration-200 ease-in-out transform disabled:bg-gray-400 disabled:ring-gray-400 disabled:cursor-not-allowed"
+                    >
+                        {t('back')}
+                    </button>
+                </div>
             </form>
         </div>
     )

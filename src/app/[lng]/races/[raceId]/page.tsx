@@ -51,7 +51,7 @@ const RaceDetails: React.FC = () => {
                         <span className="text-lg">&gt;</span>
                         <Link href={`/${lng}/races`} className="hover:text-primaryLight">{t('races')}</Link>
                         <span className="text-lg">&gt;</span>
-                        <div className='truncate-text-1'>{competitionInfo?.name}</div>
+                        <div className='truncate-text-1'>{t('competitionInfo')}</div>
                     </nav>
 
                     {/* <UpvoteButton /> */}

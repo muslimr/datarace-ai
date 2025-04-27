@@ -280,5 +280,7 @@
   "enterYourMessage": "Mesajınızı daxil edin",
   "accountControl": "Hesab idarəsi",
   "upvote": "Səs ver",
-  "upvoted": "Səs verildi"
+  "upvoted": "Səs verildi",
+  "datasetInfo": "Dataset Haqqında",
+  "competitionInfo": "Yarış Haqqında"
 }

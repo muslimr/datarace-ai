@@ -44,7 +44,7 @@ const DatasetDetails: React.FC = () => {
                         <span className="text-lg">&gt;</span>
                         <Link href={`/${lng}/datasets`} className="hover:text-primaryLight">{t('datasets')}</Link>
                         <span className="text-lg">&gt;</span>
-                        <span className='truncate-text-1'>{datasetInfo?.title}</span>
+                        <span className='truncate-text-1'>{t('datasetInfo')}</span>
                     </nav>
 
                     {

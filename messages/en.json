@@ -281,5 +281,7 @@
   "enterYourMessage": "Enter your message",
   "accountControl": "Account control",
   "upvote": "Upvote",
-  "upvoted": "Upvoted"
+  "upvoted": "Upvoted",
+  "datasetInfo": "Dataset Info",
+  "competitionInfo": "Competition Info"
 }

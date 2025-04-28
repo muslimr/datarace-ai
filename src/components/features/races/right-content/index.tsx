@@ -61,15 +61,15 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                 <div className="flex flex-col space-y-2 mb-auto">
                     <div className="flex space-x-3 mb-2">
                         <div className="h-[30px] w-[2px] bg-primaryLight" />
-                        <span className="text-xl font-medium">{t('prize')}</span>
+                        <span className="text-lg font-medium">{t('prize')}</span>
                     </div>
                     <div className="inline-flex items-center gap-3 border border-[#29B78140] bg-[#F3F9F5] py-2 px-3 rounded-lg">
                         <CoinsGreenIcon />
-                        <p className="font-bold text-customBlue-900">{competitionInfo?.awardAmount} {competitionInfo?.currencySymbol}</p>
+                        <p className="text-sm font-bold text-customBlue-900">{competitionInfo?.awardAmount} {competitionInfo?.currencySymbol}</p>
                     </div>
                     <div className="inline-flex items-center gap-2 border border-[#29B78140] bg-[#F3F9F5] py-2 px-3 rounded-lg">
                         <GreenCertificate />
-                        <p className="text-customBlue-900">{t('awardMedals')}</p>
+                        <p className="text-sm text-customBlue-900">{t('awardMedals')}</p>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                     competitionInfo?.joinAvailable &&
                     <button
                         onClick={() => setShowModal(true)}
-                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                        className="flex w-full text-sm text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                         aria-label="Join the Race"
                     >
                         {t('joinTheRace')}
@@ -109,7 +109,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                     !isAuthenticated &&
                     <button
                         onClick={() => setShowAuthModal(true)}
-                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                        className="flex w-full text-sm text-center justify-center items-center px-6 py-3 text-white transition-all bg-gray-900 rounded-lg hover:bg-dark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                         aria-label="Join the Race"
                     >
                         {t('joinTheRace')}
@@ -120,7 +120,7 @@ export const RigthContent: React.FC<IRightContentProps> = (props) => {
                     competitionInfo?.uploadAvailable &&
                     <button
                         onClick={() => setSidebarOpen(true)}
-                        className="flex w-full text-center justify-center items-center px-6 py-3 text-white transition-all bg-primary rounded-lg hover:bg-primaryDark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
+                        className="flex w-full text-sm text-center justify-center items-center px-6 py-3 text-white transition-all bg-primary rounded-lg hover:bg-primaryDark hover:shadow-lg hover:shadow-neutral-300 hover:-translate-y-px shadow-neutral-300 focus:shadow-none animate-button"
                         aria-label="Join the Race"
                     >
                         {t('uploadTheSolution')}

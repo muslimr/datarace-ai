@@ -54,19 +54,19 @@ const CountdownTimer: React.FC<{ date: string }> = ({ date }) => {
     return (
         <div className="flex gap-2 rounded-xl">
             <div className="w-full flex flex-col items-center bg-[#EFEFF2] px-3 py-2 rounded-md">
-                <span className="text-lg font-bold">{timeLeft.days}</span>
+                <span className="font-bold">{timeLeft.days}</span>
                 <span className="text-xs">Days</span>
             </div>
             <div className="w-full flex flex-col items-center bg-[#EFEFF2] px-3 py-2 rounded-md">
-                <span className="text-lg font-bold">{timeLeft.hours}</span>
+                <span className="font-bold">{timeLeft.hours}</span>
                 <span className="text-xs">Hours</span>
             </div>
             <div className="w-full flex flex-col items-center bg-[#EFEFF2] px-3 py-2 rounded-md">
-                <span className="text-lg font-bold">{timeLeft.minutes}</span>
+                <span className="font-bold">{timeLeft.minutes}</span>
                 <span className="text-xs">Min.</span>
             </div>
             <div className="w-full flex flex-col items-center bg-[#EFEFF2] px-3 py-2 rounded-md">
-                <span className="text-lg font-bold">{timeLeft.seconds}</span>
+                <span className="font-bold">{timeLeft.seconds}</span>
                 <span className="text-xs">Sec.</span>
             </div>
         </div>

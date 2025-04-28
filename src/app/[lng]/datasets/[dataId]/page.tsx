@@ -77,13 +77,13 @@ const DatasetDetails: React.FC = () => {
                 {/* Main Content */}
                 <main id="#main-content" className="space-y-5 xl:min-w-[1100px] xl:max-w-[1100px]">
                     <div className="flex gap-7">
-                        <div className="space-y-5">
+                        <div className="w-full space-y-5">
                             <section className="flex flex-col lg:flex-row gap-3 md:gap-7">
                                 <div className="flex relative rounded-2xl lg:min-w-[18rem] lg:max-w-[18rem]">
                                     <img src={datasetInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[12rem] rounded-2xl object-cover" />
                                 </div>
-                                <div className="flex flex-col md:justify-center gap-3 w-full md:h-[12rem]">
-                                    <div className="flex flex-col gap-2">
+                                <div className="w-full flex flex-col md:justify-center gap-3 w-full md:h-[12rem]">
+                                    <div className="w-full flex flex-col gap-2">
                                         <h1 id="title" className="bottom-0 left-0 text-2xl md:text-3xl md:leading-[2xl] font-semi truncate-text-2">
                                             {datasetInfo?.title}
                                         </h1>

@@ -22,7 +22,7 @@ const DatasetItem: React.FC<DatasetProps> = (props) => {
     let { id, title, description, visibility, userDto, datasetFileDownloadDto, onClick } = props
 
     const { isAuthenticated } = useSelector((state: RootState) => state.user);
-    const imageUrl = props.imageUrl || "svg/noimg.svg";
+    const imageUrl = props.imageUrl || "/svg/noimg.svg";
 
 
     return (

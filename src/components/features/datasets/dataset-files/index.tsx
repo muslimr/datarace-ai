@@ -128,7 +128,7 @@ export const DatasetFiles: React.FC<IOriginalFilesProps> = ({ files, datasetId, 
                                 key={row.id}
                                 className={`flex bg-[#EFEFF2] rounded-xl p-3`}
                             >
-                                <div className="flex bg-[#9493A5] rounded-xl text-md font-semibold text-white w-[60px] h-[60px] items-center justify-center">{row.fileType.toUpperCase()}</div>
+                                <div className="flex bg-[#9493A5] rounded-xl text-sm font-semibold text-white w-[60px] h-[50px] items-center justify-center">{row.fileType.toUpperCase()}</div>
                                 <div className="flex w-full items-center justify-between">
                                     <div className="font-medium ml-3">{row.fileName}.{row.fileType}</div>
                                     <div
@@ -139,26 +139,6 @@ export const DatasetFiles: React.FC<IOriginalFilesProps> = ({ files, datasetId, 
                                         <span>{t('download')}</span>
                                     </div>
                                 </div>
-
-                                {/* <td className="py-3 px-6">{row.id}</td>
-                                <td className="w-full py-3 px-6">{row.fileName}</td>
-                                <td className="w-full py-3 px-6">{row.fileType}</td>
-                                <td className="py-3 px-6 text-primary hover:text-primaryLight cursor-pointer" >
-                                    <div className='flex space-x-6'>
-                                        <div
-                                            className="cursor-pointer"
-                                            onClick={() => isAuthenticated ? handleDownload(row.fileName, row.id, row.fileType) : setShowAuthModal(true)}
-                                        >
-                                            {t('download')}
-                                        </div>
-                                        {
-                                            isEditable &&
-                                            <div onClick={() => onDeleteFile(row.id)}>
-                                                <TrashIcon />
-                                            </div>
-                                        }
-                                    </div>
-                                </td> */}
                             </div>
                         ))}
                     </div>

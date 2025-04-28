@@ -3,9 +3,11 @@
 // DESIGN
 
 - profile design mobile
-- races info mobile view
+- dataset info mobile view
 
 // API
 
 - user's location
 - user's position
+- dataset like countu
+- current user's feedback

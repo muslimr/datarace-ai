@@ -10,7 +10,7 @@ import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { CompetitionComments } from '@components/features/races/competition-comments';
 import CountdownTimer from '@components/shared/countdown-timer';
-import { UpvoteButton } from '@components/shared';
+import { Loader, UpvoteButton } from '@components/shared';
 import { Tooltip } from 'react-tooltip';
 
 
@@ -42,12 +42,14 @@ const RaceDetails: React.FC = () => {
     ]
 
 
+    if (isLoading) return <Loader />
+
     return (
         <div className="min-h-screen flex flex-col">
-            <div className="container mx-auto py-[6rem] space-y-5 px-5 md:px-10 lg:px-20 xl:px-40">
+            <div className="container md:flex flex-col gap-5 items-center mx-auto py-[6rem] px-5 md:px-10 xl:px-[100px]">
                 {/* Breadcrumb */}
-                <div className="flex flex-col md:flex-row items-end justify-between">
-                    <nav className="mb-5 md:mb-0 px-2 md:px-0 text-sm flex justify-start items-center text-gray-600 space-x-3">
+                <div className="flex flex-col w-full md:flex-row items-start justify-between xl:min-w-[1100px] xl:max-w-[1100px]">
+                    <nav className="mb-5 md:mb-0 md:px-0 text-sm flex justify-start items-center text-gray-600 gap-3">
                         <Link href={`/${lng}`} className="hover:text-primaryLight" style={{ whiteSpace: "nowrap" }}>{t('mainPage')}</Link>
                         <span className="text-lg">&gt;</span>
                         <Link href={`/${lng}/races`} className="hover:text-primaryLight">{t('races')}</Link>
@@ -61,20 +63,20 @@ const RaceDetails: React.FC = () => {
                 <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
 
                 {/* Main Content */}
-                <main id="#main-content" className="space-y-5">
-                    <section className="flex flex-col lg:flex-row gap-7">
+                <main id="#main-content" className="space-y-5 xl:min-w-[1100px] xl:max-w-[1100px]">
+                    <section className="flex flex-col lg:flex-row gap-10">
                         <div className="flex relative rounded-2xl lg:min-w-[18rem] lg:max-w-[18rem]">
-                            <img src={competitionInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="md:w-full h-[12rem] rounded-2xl object-cover" />
+                            <img src={competitionInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[12rem] rounded-2xl object-cover" />
                         </div>
                         <div className="flex flex-col justify-between w-full h-[12rem]">
                             <div className="flex flex-col gap-2">
-                                <h1 id="title" className="bottom-0 left-0 text-3xl leading-[2xl] font-semi truncate-text-2">
+                                <h1 id="title" className="bottom-0 left-0 text-2xl md:text-3xl md:leading-[2xl] font-semi truncate-text-2">
                                     {competitionInfo?.name}
                                 </h1>
                                 <Tooltip anchorSelect="#title">
                                     {competitionInfo?.name}
                                 </Tooltip>
-                                <p id="description" className='text-xs truncate-text-2 text-gray-500'>
+                                <p id="description" className='text-sm truncate-text-2 text-gray-500'>
                                     {competitionInfo?.text}
                                 </p>
                                 <Tooltip anchorSelect="#description">

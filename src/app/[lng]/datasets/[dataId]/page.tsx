@@ -9,6 +9,8 @@ import { UpdateDatasetSidebar } from '@components/features/datasets/update-datas
 import { DatasetFiles } from '@components/features/datasets/dataset-files';
 import { DatasetComments } from '@components/features';
 import { DatasetsSection } from '@components/features/home';
+import { Tooltip } from 'react-tooltip';
+import { Loader, UpvoteButton } from '@components/shared';
 
 
 const DatasetDetails: React.FC = () => {
@@ -34,12 +36,14 @@ const DatasetDetails: React.FC = () => {
     }
 
 
+    if (isLoading) return <Loader />
+
     return (
         <div className="min-h-screen flex flex-col">
-            <div className="container mx-auto px-3 md:px-7 py-[6rem] space-y-5">
+            <div className="container md:flex flex-col gap-5 items-center mx-auto py-[6rem] px-5 md:px-10 xl:px-[100px]">
                 {/* Breadcrumb */}
-                <div className="flex flex-col md:flex-row justify-between gap-3">
-                    <nav className="px-2 md:px-0 text-sm flex justify-start items-center text-gray-600 space-x-3">
+                <div className="flex flex-col w-full md:flex-row items-start justify-between xl:min-w-[1100px] xl:max-w-[1100px] mb-5 md:mb-0">
+                    <nav className="text-sm flex justify-start items-center text-gray-600 gap-3">
                         <Link href={`/${lng}`} className="hover:text-primaryLight" style={{ whiteSpace: "nowrap" }}>{t('mainPage')}</Link>
                         <span className="text-lg">&gt;</span>
                         <Link href={`/${lng}/datasets`} className="hover:text-primaryLight">{t('datasets')}</Link>
@@ -71,51 +75,76 @@ const DatasetDetails: React.FC = () => {
                 <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
 
                 {/* Main Content */}
-                <main id="#main-content" className="space-y-5">
-                    <section className="relative border">
-                        <img src={datasetInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[20rem] object-cover" />
-                        <h1 className="absolute w-full bottom-0 left-0 text-2xl text-white font-regmed px-7 py-2 backdrop-blur-xl bg-dark/30">
-                            {datasetInfo?.title}
-                        </h1>
-                    </section>
-                    <section className="grid grid-cols-1 lg:grid-cols-4 gap-8 rounded-2xl">
-                        <div className="lg:col-span-3 gap-8">
-                            <div dangerouslySetInnerHTML={{ __html: datasetInfo?.content || '' }}></div>
+                <main id="#main-content" className="space-y-5 xl:min-w-[1100px] xl:max-w-[1100px]">
+                    <div className="flex gap-7">
+                        <div className="space-y-5">
+                            <section className="flex flex-col lg:flex-row gap-3 md:gap-7">
+                                <div className="flex relative rounded-2xl lg:min-w-[18rem] lg:max-w-[18rem]">
+                                    <img src={datasetInfo?.imageUrl || "/svg/dr_banner.svg"} alt="Race Image" className="w-full h-[12rem] rounded-2xl object-cover" />
+                                </div>
+                                <div className="flex flex-col md:justify-center gap-3 w-full md:h-[12rem]">
+                                    <div className="flex flex-col gap-2">
+                                        <h1 id="title" className="bottom-0 left-0 text-2xl md:text-3xl md:leading-[2xl] font-semi truncate-text-2">
+                                            {datasetInfo?.title}
+                                        </h1>
+                                        <Tooltip anchorSelect="#title">
+                                            {datasetInfo?.title}
+                                        </Tooltip>
+                                        <p id="description" className='text-sm truncate-text-2 text-gray-500'>
+                                            {datasetInfo?.description}
+                                        </p>
+                                        <Tooltip anchorSelect="#description">
+                                            <div className="max-w-[300px]">{datasetInfo?.description}</div>
+                                        </Tooltip>
+                                    </div>
+                                    <div className="inline-flex">
+                                        <UpvoteButton />
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section className="grid rounded-2xl">
+                                <div dangerouslySetInnerHTML={{ __html: datasetInfo?.content || '' }}></div>
+                            </section>
+
+                            <section>
+                                <DatasetFiles
+                                    datasetId={datasetId}
+                                    isEditable={datasetInfo?.isEditable}
+                                    files={datasetInfo?.datasetFileDownloadDto}
+                                    refetch={refetch}
+                                />
+                            </section>
                         </div>
-                        {/* Tags */
-                            !!datasetInfo?.tags?.length &&
+
+                        {/* Right Box */}
+                        <div className="hidden lg:flex md:min-w-[30%] xl:min-w-[25%] space-y-7 border rounded-xl p-5">
                             <div className="space-y-2">
                                 <div className="flex space-x-3 mb-5">
                                     <div className="h-[30px] w-[2px] bg-primaryLight" />
-                                    <span className="text-xl font-medium">Tags</span>
+                                    <span className="text-lg font-medium">Tags</span>
                                 </div>
-                                <div className="space-y-2">
+                                <div className="flex flex-wrap space-y-2">
                                     {
                                         datasetInfo?.tags?.map((tag, index) =>
-                                            <div className="inline-block text-sm px-4 py-2 text-[1rem] rounded-lg space-x-2 mr-2 bg-gray-100">
-                                                <span className="text-primaryLight">#</span>
-                                                <span>{tag.name}</span>
+                                            <div className="inline-flex text-sm px-3 py-2 text-[1rem] rounded-2xl gap-1 mr-2 border border-gray-500 max-w-[80%]">
+                                                <div className="text-primaryLight">#</div>
+                                                <p className="truncate-text-1">{tag.name}</p>
                                             </div>
                                         )
                                     }
                                 </div>
                             </div>
-                        }
-                    </section>
-                    <section>
-                        <DatasetFiles
-                            datasetId={datasetId}
-                            isEditable={datasetInfo?.isEditable}
-                            files={datasetInfo?.datasetFileDownloadDto}
-                            refetch={refetch}
-                        />
-                    </section>
+                        </div>
+                    </div>
+
                     <section>
                         <DatasetComments
                             datasetId={datasetId}
                             isEditable={datasetInfo?.isEditable}
                         />
                     </section>
+
                     <section className="pt-10">
                         <div className='container mx-auto'>
                             <DatasetsSection />

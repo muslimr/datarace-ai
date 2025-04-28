@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useCreateDatasetCommentMutation, useLazyGetDatasetCommentsQuery } from '@api/datasets-api';
 import { EmojiClickData } from 'emoji-picker-react';
-import { DatasetComment } from '@components/shared';
+import { AuthModal, DatasetComment } from '@components/shared';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import { RootState } from '@store/store';
@@ -24,10 +24,11 @@ export const DatasetComments: React.FC<IDatasetCommentsProps> = ({ datasetId, is
 
     const [page, setPage] = React.useState(0);
     const [count, setCount] = React.useState(3)
-    const [triggerGetComments, { data: commentsData }] = useLazyGetDatasetCommentsQuery();
     const [newComment, setNewComment] = useState<string>('');
-    const [allCommentsVisible, showAllComments] = React.useState<boolean>(false)
     const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState<boolean>(false);
+    const [showAuthModal, setShowAuthModal] = React.useState<boolean>(false)
+
+    const [triggerGetComments, { data: commentsData }] = useLazyGetDatasetCommentsQuery();
     const [createDatasetComment] = useCreateDatasetCommentMutation();
     const { user, isAuthenticated } = useSelector((state: RootState) => state.user);
     const pickerRef = useRef<HTMLDivElement>(null);
@@ -110,53 +111,56 @@ export const DatasetComments: React.FC<IDatasetCommentsProps> = ({ datasetId, is
                     }
                 </div>
 
-                {isAuthenticated && (
-                    <div className="flex w-full gap-2">
-                        <div className="relative w-[35px] h-[35px] min-w-[35px] min-h-[35px] rounded-full overflow-hidden">
-                            <Image
-                                src={userImage || "/png/user.png"}
-                                alt="Avatar"
-                                fill={true}
-                                className="object-cover"
-                                priority={true}
-                            />
-                        </div>
-                        <div className="flex w-full space-y-3 flex-col items-end relative">
-                            <textarea
-                                value={newComment}
-                                placeholder={t('whatsOnYourMind')}
-                                className={`w-full h-[100px] bg-gray-50 px-5 py-4 pr-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primaryLight transition duration-200 ease-in-out transform resize-none`}
-                                onChange={(e) => setNewComment(e.target.value)}
-                            />
-                            <div className="flex gap-3">
-                                <div className="h-[40px] w-[40px] flex items-center justify-center bg-gray-200 hover:bg-gray-300 focus:outline-none transition rounded-full">
-                                    <button
-                                        onClick={() => setIsEmojiPickerVisible((prev) => !prev)}
-                                        className="text-2xl"
-                                        aria-label="Open Emoji Picker"
-                                    >
-                                        😊
-                                    </button>
-                                </div>
+                <div className="flex w-full gap-2">
+                    <div className="relative w-[35px] h-[35px] min-w-[35px] min-h-[35px] rounded-full overflow-hidden">
+                        <Image
+                            src={userImage || "/png/user.png"}
+                            alt="Avatar"
+                            fill={true}
+                            className="object-cover"
+                            priority={true}
+                        />
+                    </div>
+                    <div className="flex w-full space-y-3 flex-col items-end relative">
+                        <textarea
+                            value={newComment}
+                            placeholder={t('whatsOnYourMind')}
+                            className={`w-full h-[100px] bg-gray-50 px-5 py-4 pr-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primaryLight transition duration-200 ease-in-out transform resize-none`}
+                            onChange={(e) => isAuthenticated ? setNewComment(e.target.value) : setShowAuthModal(true)}
+                        />
+                        <div className="flex gap-3">
+                            <div className="h-[40px] w-[40px] flex items-center justify-center bg-gray-200 hover:bg-gray-300 focus:outline-none transition rounded-full">
                                 <button
-                                    onClick={onCreateComment}
-                                    className="h-[40px] font-regmed bg-primary text-md text-white px-6 py-1 rounded-lg ring-2 ring-primary hover:bg-primaryDark hover:ring-primaryDark hover:shadow-lg hover:shadow-neutral-300 focus:outline-none focus:ring-2 focus:ring-primaryDark transition duration-200 ease-in-out transform"
+                                    onClick={() => isAuthenticated ? setIsEmojiPickerVisible((prev) => !prev) : setShowAuthModal(true)}
+                                    className="text-2xl"
+                                    aria-label="Open Emoji Picker"
                                 >
-                                    {t('comment')}
+                                    😊
                                 </button>
                             </div>
-
-                            {isEmojiPickerVisible && (
-                                <div
-                                    ref={pickerRef}
-                                    className="absolute bottom-[-10px] right-0 translate-y-full z-50"
-                                >
-                                    <EmojiPicker onEmojiClick={handleEmojiClick} />
-                                </div>
-                            )}
+                            <button
+                                onClick={() => isAuthenticated ? onCreateComment() : setShowAuthModal(true)}
+                                className="h-[40px] font-regmed bg-primary text-md text-white px-6 py-1 rounded-lg ring-2 ring-primary hover:bg-primaryDark hover:ring-primaryDark hover:shadow-lg hover:shadow-neutral-300 focus:outline-none focus:ring-2 focus:ring-primaryDark transition duration-200 ease-in-out transform"
+                            >
+                                {t('comment')}
+                            </button>
                         </div>
+
+                        {isEmojiPickerVisible && (
+                            <div
+                                ref={pickerRef}
+                                className="absolute bottom-[-10px] right-0 translate-y-full z-50"
+                            >
+                                <EmojiPicker onEmojiClick={handleEmojiClick} />
+                            </div>
+                        )}
                     </div>
-                )}
+                </div>
+
+                <AuthModal
+                    visible={showAuthModal}
+                    onClose={() => setShowAuthModal(false)}
+                />
             </div>
         </section>
     );

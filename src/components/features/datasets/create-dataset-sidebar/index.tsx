@@ -92,7 +92,11 @@ export const CreateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
             >
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="px-5 pb-20 text-start space-y-1 overflow-auto space-y-5">
-                        <DatasetImageUploader imageId={imageId} setImageId={setImageId} />
+                        <DatasetImageUploader
+                            type="create"
+                            imageId={imageId}
+                            setImageId={setImageId}
+                        />
 
                         <div className="space-y-5 select-none">
                             <FormInput

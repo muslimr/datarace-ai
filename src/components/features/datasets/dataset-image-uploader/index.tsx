@@ -1,6 +1,6 @@
 "use client"
 
-import { useUploadDatasetImageMutation } from '@api/upload-api';
+import { useUploadDatasetImageMutation, useUploadDatasetUpdateImageMutation } from '@api/upload-api';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormSetValue } from 'react-hook-form';
@@ -9,16 +9,18 @@ import { UseFormSetValue } from 'react-hook-form';
 
 
 interface ImageUploaderProps {
+    type: string,
     image?: string,
     imageId?: number | null | undefined,
     setImageId: (val: number | null) => void,
 }
 
-const DatasetImageUploader: React.FC<ImageUploaderProps> = ({ image, imageId, setImageId }) => {
+const DatasetImageUploader: React.FC<ImageUploaderProps> = ({ type, image, imageId, setImageId }) => {
     const t = useTranslations();
 
     const [uploadedImage, setUploadedImage] = React.useState<File | null>(null);
     const [uploadDatasetImage, { isLoading }] = useUploadDatasetImageMutation();
+    const [uploadUpdateDatasetImage, { }] = useUploadDatasetUpdateImageMutation();
     const [initialImage, setInitialImage] = React.useState<string>('');
 
     const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +35,11 @@ const DatasetImageUploader: React.FC<ImageUploaderProps> = ({ image, imageId, se
             const formData = new FormData();
             formData.append("file", uploadedFile);
 
-            let response = await uploadDatasetImage({ file: formData }).unwrap();
+            let response =
+                type === "update"
+                    ? await uploadUpdateDatasetImage({ file: formData }).unwrap()
+                    : await uploadDatasetImage({ file: formData }).unwrap()
+
             setImageId(response.id)
         } catch (error) {
             console.log(error)

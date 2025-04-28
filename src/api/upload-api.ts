@@ -51,6 +51,13 @@ export const uploadApi = createApi({
         }),
         uploadDatasetImage: builder.mutation<IProfileImageUploadResponse, IProfileImageUploadRequest>({
             query: ({ file }) => ({
+                url: '/files/upload/dataset-image',
+                method: 'POST',
+                data: file,
+            }),
+        }),
+        uploadDatasetUpdateImage: builder.mutation<IProfileImageUploadResponse, IProfileImageUploadRequest>({
+            query: ({ file }) => ({
                 url: '/files/upload/dataset-update-image',
                 method: 'POST',
                 data: file,
@@ -81,6 +88,7 @@ export const {
     useLazySubmitResultQuery,
     useLazyGetDatasetQuery,
     useUploadDatasetImageMutation,
+    useUploadDatasetUpdateImageMutation,
     useUploadDatasetFileMutation,
     useUploadBlogImageMutation,
 } = uploadApi;

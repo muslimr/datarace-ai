@@ -8,6 +8,8 @@ export interface IDataset {
     visibility?: string,
     status?: string,
     isEditable?: boolean,
+    likeCount?: number,
+    likedByCurrentUser?: boolean,
     datasetFileDownloadDto?: IDatasetFilesDto[],
     tags: { name: string }[],
     userDto: {
@@ -125,4 +127,8 @@ export interface IDatasetUpdateCommentRequest {
     data: {
         text: string,
     }
+}
+
+export interface IDatasetLikeRequest {
+    id: number,
 }

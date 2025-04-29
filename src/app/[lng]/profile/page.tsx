@@ -23,6 +23,11 @@ const Profile: React.FC = () => {
 
     const TABS: { title: string, value: string, content: React.ReactNode }[] = [
         {
+            value: 'settings',
+            title: t('settings'),
+            content: <AccountSettings />,
+        },
+        {
             value: 'attended',
             title: t('attendedRaces'),
             content: <AttendedRaces />,
@@ -31,11 +36,6 @@ const Profile: React.FC = () => {
             value: 'submitted',
             title: t('submittedProjects'),
             content: <SubmittedProjects />,
-        },
-        {
-            value: 'settings',
-            title: t('settings'),
-            content: <AccountSettings />,
         },
     ];
 

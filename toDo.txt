@@ -2,12 +2,5 @@
 
 // DESIGN
 
-- profile design mobile
-- dataset info mobile view
 
 // API
-
-- user's location
-- user's position
-- dataset like countu
-- current user's feedback

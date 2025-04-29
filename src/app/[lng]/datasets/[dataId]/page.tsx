@@ -10,8 +10,54 @@ import { DatasetFiles } from '@components/features/datasets/dataset-files';
 import { DatasetComments } from '@components/features';
 import { DatasetsSection } from '@components/features/home';
 import { Tooltip } from 'react-tooltip';
-import { Loader, UpvoteButton } from '@components/shared';
+import { FeedbackButton, Loader, UpvoteButton } from '@components/shared';
 
+
+const FEEDBACKS = [
+    {
+        id: 1,
+        answer: "Learning",
+        likeCount: 0
+    },
+    {
+        id: 2,
+        answer: "Research",
+        likeCount: 0
+    },
+    {
+        id: 3,
+        answer: "Application",
+        likeCount: 0
+    },
+]
+
+const FEEDBACKS2 = [
+    {
+        id: 1,
+        answer: "Well-documented",
+        likeCount: 0
+    },
+    {
+        id: 2,
+        answer: "Well-maintained",
+        likeCount: 0
+    },
+    {
+        id: 3,
+        answer: "Clean data",
+        likeCount: 0
+    },
+    {
+        id: 4,
+        answer: "Original",
+        likeCount: 0
+    },
+    {
+        id: 5,
+        answer: "High-quality notebooks",
+        likeCount: 0
+    },
+]
 
 const DatasetDetails: React.FC = () => {
     const t = useTranslations();
@@ -98,7 +144,11 @@ const DatasetDetails: React.FC = () => {
                                         </Tooltip>
                                     </div>
                                     <div className="inline-flex">
-                                        <UpvoteButton />
+                                        <UpvoteButton
+                                            id={Number(datasetId)}
+                                            isLiked={datasetInfo?.likedByCurrentUser}
+                                            count={Number(datasetInfo?.likeCount)}
+                                        />
                                     </div>
                                 </div>
                             </section>
@@ -115,6 +165,29 @@ const DatasetDetails: React.FC = () => {
                                     refetch={refetch}
                                 />
                             </section>
+
+                            {/* <section className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-3">
+                                    <label className="text-lg font-medium">What have you used this dataset for?</label>
+                                    <div className="flex flex-wrap gap-3">
+                                        {
+                                            FEEDBACKS.map((feedback, index) =>
+                                                <FeedbackButton key={feedback.id} label={feedback.answer} />
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-3">
+                                    <label className="text-lg font-medium">How would you describe this dataset?</label>
+                                    <div className="flex flex-wrap gap-3">
+                                        {
+                                            FEEDBACKS2.map((feedback, index) =>
+                                                <FeedbackButton key={feedback.id} label={feedback.answer} />
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                            </section> */}
                         </div>
 
                         {/* Right Box */}

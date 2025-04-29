@@ -149,7 +149,7 @@ export const AccountSettings: React.FC = () => {
                         register={register}
                         errors={errors}
                     />
-                    <div className="space-y-2">
+                    <div className="space-y-4">
                         <FormInput
                             label={t('Email')}
                             type='email'

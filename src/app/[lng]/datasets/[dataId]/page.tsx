@@ -153,6 +153,22 @@ const DatasetDetails: React.FC = () => {
                                 </div>
                             </section>
 
+                            <section>
+                                <iframe
+                                    src="https://docs.google.com/gview?url=https://people.sc.fsu.edu/~jburkardt/data/csv/airtravel.csv&embedded=true"
+                                    style={{ width: '100%', height: '600px', borderRadius: 20, backgroundColor: '#fff' }}
+                                    frameBorder="0"
+                                ></iframe>
+                            </section>
+
+                            {/* <section>
+                                <iframe
+                                    src="https://docs.google.com/gview?url=https://file-examples.com/storage/fe3f83658db26d01c53bd0c/2017/02/file_example_XLS_10.xls&embedded=true"
+                                    style={{ width: '100%', height: '600px', borderRadius: 20, backgroundColor: '#fff' }}
+                                    frameBorder="0"
+                                ></iframe>
+                            </section> */}
+
                             <section className="grid rounded-2xl">
                                 <div dangerouslySetInnerHTML={{ __html: datasetInfo?.content || '' }}></div>
                             </section>

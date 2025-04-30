@@ -1,13 +1,19 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import axiosBaseQuery from '@utils/axiosBaseQuery';
-import { IDataset, IDatasetCreateCommentRequest, IDatasetCreateRequest, IDatasetInfoRequest, IDatasetLikeRequest, IDatasetsRequest, IDatasetsResponse, IDatasetUpdateCommentRequest, IDatasetUpdateRequest, IDeleteDatasetCommentRequest, IGetDatasetCommentsRequest, IGetDatasetCommentsResponse } from './types/dataset-types';
+import { IDataset, IDatasetCreateCommentRequest, IDatasetCreateRequest, IDatasetInfoRequest, IDatasetLikeRequest, IDatasetsRequest, IDatasetsResponse, IDatasetUpdateCommentRequest, IDatasetUpdateRequest, IDeleteDatasetCommentRequest, IFeedbacksListRequest, IFeedbacksListResponse, IGetDatasetCommentsRequest, IGetDatasetCommentsResponse, IGiveFeedbackRequest, IGiveFeedbackResponse } from './types/dataset-types';
 import { IMessageResponse } from './types/competition-types';
 
 
 export const datasetsApi = createApi({
     reducerPath: 'datasetsApi',
     baseQuery: axiosBaseQuery,
-    tagTypes: ['AllDatasets', 'MyDatasets', 'DatasetInfo', 'DatasetComments'],
+    tagTypes: [
+        'AllDatasets',
+        'MyDatasets',
+        'DatasetInfo',
+        'DatasetComments',
+        'FeedbacksList',
+    ],
     endpoints: (builder) => ({
         getAllDatasets: builder.query<IDatasetsResponse, IDatasetsRequest>({
             query: ({ data, lang }) => ({
@@ -104,6 +110,21 @@ export const datasetsApi = createApi({
             }),
             invalidatesTags: ['DatasetInfo'],
         }),
+        getDatasetFeedbacks: builder.query<IFeedbacksListResponse, IFeedbacksListRequest>({
+            query: ({ id, lang }) => ({
+                url: `/datasets/${id}/feedback`,
+                method: 'GET',
+                headers: { "Accept-language": lang || "en" }
+            }),
+            providesTags: ['FeedbacksList'],
+        }),
+        giveFeedback: builder.mutation<IGiveFeedbackResponse, IGiveFeedbackRequest>({
+            query: ({ id, datasetFeedbackAnswersId }) => ({
+                url: `/datasets/${id}/feedback/${datasetFeedbackAnswersId}`,
+                method: 'POST',
+            }),
+            invalidatesTags: ['FeedbacksList'],
+        }),
     }),
 });
 
@@ -120,4 +141,6 @@ export const {
     useUpdateDatasetCommentMutation,
     useDeleteDatasetFileMutation,
     useLikeDatasetMutation,
+    useLazyGetDatasetFeedbacksQuery,
+    useGiveFeedbackMutation,
 } = datasetsApi;

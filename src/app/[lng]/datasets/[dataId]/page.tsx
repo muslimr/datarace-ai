@@ -7,57 +7,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useDeleteDatasetMutation, useGetDatasetInfoQuery } from '@api/datasets-api';
 import { UpdateDatasetSidebar } from '@components/features/datasets/update-dataset-sidebar';
 import { DatasetFiles } from '@components/features/datasets/dataset-files';
-import { DatasetComments } from '@components/features';
+import { DatasetComments, DatasetFeedbacks } from '@components/features';
 import { DatasetsSection } from '@components/features/home';
 import { Tooltip } from 'react-tooltip';
-import { FeedbackButton, Loader, UpvoteButton } from '@components/shared';
+import { AuthModal, Loader, UpvoteButton } from '@components/shared';
+import { useSelector } from 'react-redux';
+import { RootState } from '@store/store';
 
-
-const FEEDBACKS = [
-    {
-        id: 1,
-        answer: "Learning",
-        likeCount: 0
-    },
-    {
-        id: 2,
-        answer: "Research",
-        likeCount: 0
-    },
-    {
-        id: 3,
-        answer: "Application",
-        likeCount: 0
-    },
-]
-
-const FEEDBACKS2 = [
-    {
-        id: 1,
-        answer: "Well-documented",
-        likeCount: 0
-    },
-    {
-        id: 2,
-        answer: "Well-maintained",
-        likeCount: 0
-    },
-    {
-        id: 3,
-        answer: "Clean data",
-        likeCount: 0
-    },
-    {
-        id: 4,
-        answer: "Original",
-        likeCount: 0
-    },
-    {
-        id: 5,
-        answer: "High-quality notebooks",
-        likeCount: 0
-    },
-]
 
 const DatasetDetails: React.FC = () => {
     const t = useTranslations();
@@ -67,7 +23,11 @@ const DatasetDetails: React.FC = () => {
     const { dataId } = params;
     const datasetId = Array.isArray(dataId) ? dataId[0] : dataId;
 
+    const { user, isAuthenticated } = useSelector((state: RootState) => state.user);
+
+    const [showAuthModal, setShowAuthModal] = React.useState<boolean>(false)
     const [isSidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
+
     const [deleteDataset] = useDeleteDatasetMutation();
     const { data: datasetInfo, error, isLoading, refetch } = useGetDatasetInfoQuery({ id: dataId as string, lang: lng }, { skip: !dataId });
 
@@ -143,7 +103,7 @@ const DatasetDetails: React.FC = () => {
                                             <div className="max-w-[300px]">{datasetInfo?.description}</div>
                                         </Tooltip>
                                     </div>
-                                    <div className="inline-flex">
+                                    <div className="inline-flex" onClick={() => !isAuthenticated && setShowAuthModal(true)}>
                                         <UpvoteButton
                                             id={Number(datasetId)}
                                             isLiked={datasetInfo?.likedByCurrentUser}
@@ -180,6 +140,10 @@ const DatasetDetails: React.FC = () => {
                                     files={datasetInfo?.datasetFileDownloadDto}
                                     refetch={refetch}
                                 />
+                            </section>
+
+                            <section className="flex flex-col gap-5">
+                                <DatasetFeedbacks datasetId={Number(datasetId)} />
                             </section>
 
                             {/* <section className="flex flex-col gap-5">
@@ -245,6 +209,10 @@ const DatasetDetails: React.FC = () => {
             <UpdateDatasetSidebar
                 visible={isSidebarOpen}
                 setSidebarOpen={setSidebarOpen}
+            />
+            <AuthModal
+                visible={showAuthModal}
+                onClose={() => setShowAuthModal(false)}
             />
         </div >
     );

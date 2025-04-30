@@ -147,7 +147,7 @@
   "allBlogs": "Bütün Bloqlar",
   "myBlogs": "Mənim Bloqlarım",
   "authModalTitle": "Giriş tələb olunur",
-  "authModalDescription": "Bu yarışa qoşulmaq üçün hesabınıza daxil olun. Davam etmək üçün giriş edin və ya yeni hesab yaradın.",
+  "authModalDescription": "Hesabınıza daxil olun. Davam etmək üçün giriş edin və ya yeni hesab yaradın.",
   "dontHaveAccount": "Hələ hesabınız yoxdursa",
   "technology": "Texnologiya",
   "oilIndustry": "Neft və İndustriya",
@@ -284,5 +284,6 @@
   "datasetInfo": "Dataset Haqqında",
   "competitionInfo": "Yarış Haqqında",
   "back": "Geriyə",
-  "blogInfo": "Bloq Haqqında"
+  "blogInfo": "Bloq Haqqında",
+  "datasetDescription": "Dataset Haqqında"
 }

@@ -20,4 +20,3 @@ export * from './share-modal';
 export * from './table-pagination';
 export * from './countdown-timer';
 export * from './upvote-button';
-export * from './feedback-button';

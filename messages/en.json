@@ -148,7 +148,7 @@
   "allBlogs": "All Blogs",
   "myBlogs": "My Blogs",
   "authModalTitle": "Authentication Required",
-  "authModalDescription": "To join this race, you need to sign in. Please log in or create an account to continue.",
+  "authModalDescription": "You need to sign in. Please log in or create an account to continue.",
   "dontHaveAccount": "If you don't have an account yet",
   "technology": "Technology",
   "oilIndustry": "Oil & Industry",
@@ -285,5 +285,6 @@
   "datasetInfo": "Dataset Info",
   "competitionInfo": "Competition Info",
   "back": "Back",
-  "blogInfo": "Blog Info"
+  "blogInfo": "Blog Info",
+  "datasetDescription": "Dataset Description"
 }

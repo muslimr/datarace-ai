@@ -6,3 +6,4 @@ export * from './dataset-image-uploader';
 export * from './dataset-comments';
 export * from './dataset-comment-edit-modal';
 export * from './dataset-comment-reply-modal';
+export * from './dataset-feedbacks';

@@ -28,6 +28,34 @@ export interface IDatasetFilesDto {
     fileType: string,
 }
 
+export interface IDatasetComment {
+    id: number,
+    text: string,
+    userId: number,
+    datasetId: number,
+    isEditable?: true,
+    repliedCommentDto: IDatasetComment,
+    datasetChildCommentDtos: IDatasetComment[],
+    fullName: string,
+    nickname: string,
+    userImageUrl: string,
+    createdAt: number,
+}
+
+export interface IDatasetFeedback {
+    question: string,
+    answers: {
+        id: number,
+        answer: string,
+        likeCount: number,
+        likedByCurrentUser: boolean
+    }[]
+}
+
+
+// -------------
+// REQUEST TYPES
+
 export interface IDatasetsRequest {
     data: { page: number, count: number },
     lang: string,
@@ -46,19 +74,25 @@ export interface IDatasetCreateRequest {
 }
 
 
-export interface IDatasetsResponse {
-    userDatasets: IDataset[],
-    hasNextPage: boolean,
-    lastPageNumber: boolean,
-    totalElements: number,
+export interface IDeleteDatasetCommentRequest {
+    commentId: string | number | undefined,
 }
 
+export interface IDatasetUpdateCommentRequest {
+    commentId: string | number | undefined,
+    data: {
+        text: string,
+    }
+}
+
+export interface IDatasetLikeRequest {
+    id: number,
+}
 
 export interface IDatasetInfoRequest {
     id: string | number,
     lang: string,
 }
-
 
 export interface IDatasetUpdateRequest {
     dataId: string,
@@ -75,22 +109,6 @@ export interface IDatasetUpdateRequest {
     lang: string,
 }
 
-
-
-export interface IDatasetComment {
-    id: number,
-    text: string,
-    userId: number,
-    datasetId: number,
-    isEditable?: true,
-    repliedCommentDto: IDatasetComment,
-    datasetChildCommentDtos: IDatasetComment[],
-    fullName: string,
-    nickname: string,
-    userImageUrl: string,
-    createdAt: number,
-}
-
 export interface IDatasetCreateCommentRequest {
     id: string | number | undefined,
     data: {
@@ -101,15 +119,35 @@ export interface IDatasetCreateCommentRequest {
     }
 }
 
-export interface IDatasetCreateCommentResponse { }
-
-
 export interface IGetDatasetCommentsRequest {
     id: string | number | undefined,
     page: number,
     count: number,
 }
 
+export interface IFeedbacksListRequest {
+    id: number | null,
+    lang: string,
+}
+
+export interface IGiveFeedbackRequest {
+    id: number | null,
+    datasetFeedbackAnswersId: number,
+}
+
+
+
+// -------------
+// RESPONSE TYPES
+
+export interface IDatasetsResponse {
+    userDatasets: IDataset[],
+    hasNextPage: boolean,
+    lastPageNumber: boolean,
+    totalElements: number,
+}
+
+export interface IDatasetCreateCommentResponse { }
 
 export interface IGetDatasetCommentsResponse {
     comments: IDatasetComment[],
@@ -118,17 +156,9 @@ export interface IGetDatasetCommentsResponse {
     totalElements: number,
 }
 
-export interface IDeleteDatasetCommentRequest {
-    commentId: string | number | undefined,
-}
+export type IFeedbacksListResponse = IDatasetFeedback[]
 
-export interface IDatasetUpdateCommentRequest {
-    commentId: string | number | undefined,
-    data: {
-        text: string,
-    }
-}
-
-export interface IDatasetLikeRequest {
-    id: number,
+export interface IGiveFeedbackResponse {
+    success: string,
+    message: string,
 }

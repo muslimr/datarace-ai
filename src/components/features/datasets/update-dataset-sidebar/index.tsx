@@ -125,8 +125,16 @@ export const UpdateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
                                 register={register}
                                 errors={errors}
                             />
-                            <TextEditor
+                            <FormInput
+                                isTextarea
+                                type='text'
                                 name='content'
+                                placeholder={t('datasetDescription')}
+                                register={register}
+                                errors={errors}
+                            />
+                            <TextEditor
+                                name='description'
                                 initialValue={datasetInfo?.description}
                                 register={register}
                                 setValue={setValue}

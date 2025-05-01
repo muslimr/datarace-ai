@@ -38,6 +38,7 @@ export const datasetsApi = createApi({
                 url: `/datasets`,
                 method: 'POST',
                 data: data,
+                headers: { "Accept-language": data.lang || "en" }
             }),
             invalidatesTags: ['AllDatasets', 'MyDatasets'],
         }),

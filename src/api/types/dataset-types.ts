@@ -71,6 +71,7 @@ export interface IDatasetCreateRequest {
     datasetImageId?: number | null,
     datasetProfileImageId?: number,
     tags?: { name: string }[],
+    lang: string,
 }
 
 

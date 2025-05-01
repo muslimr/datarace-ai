@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { FormInput } from '@components/shared';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -19,7 +19,9 @@ interface IDatasetSidebarProps {
 interface IFormInput extends IDatasetCreateRequest { }
 
 export const CreateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, setSidebarOpen }) => {
-    const t = useTranslations();
+    let t = useTranslations();
+    let lng = useLocale();
+
     const sidebarRef = React.useRef<HTMLDivElement>(null);
     const [imageId, setImageId] = React.useState<number | null>(0);
     const [tags, setTags] = React.useState<{ name: string }[]>([]);
@@ -58,7 +60,8 @@ export const CreateDatasetSidebar: React.FC<IDatasetSidebarProps> = ({ visible, 
             await createDataset({
                 datasetImageId: imageId,
                 ...data,
-                tags
+                tags,
+                lang: lng,
             }).unwrap();
             toast.success('Your dataset has been created and will be available for public view after approval by the admins.');
             setSidebarOpen(false);
